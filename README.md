@@ -1,4 +1,4 @@
-# PES Physical Design
+## PES Physical Design
 
 **Course Name** : VLSI Physical Design for ASICs  
 **Instructor** : Kunal Ghosh   
@@ -32,12 +32,13 @@ Week 3 - Physical Design<br>
 ## How to talk to computers.
 
 ### Chip design
-<image 1>
+![image1](https://github.com/vamsi-2312/pes_pd/assets/142248038/a130d96f-9bf7-4e42-839e-05a3e89a25d0)
+
 let get inside a chip
 
-<image 2>
+![image2](https://github.com/vamsi-2312/pes_pd/assets/142248038/552da4d7-b400-4800-a999-89ed310e9a86)
 
-<image 3>
+![image3](https://github.com/vamsi-2312/pes_pd/assets/142248038/5f4677d1-b412-4f2e-997a-2786a12992a5)
 
 (before ths class we call as system but nw we call as package)
 
@@ -56,7 +57,7 @@ How to run a C Program on a cpu, there is a certain flow<br>
 RISC  Architecture -> Implementation(RTL) -> Layout<br>
 
 C program -> Assemble Level program -> Machine level program<br>
-<image 4>
+![image4](https://github.com/vamsi-2312/pes_pd/assets/142248038/35bb44c2-0c93-4c59-9985-96da10278581)
 
 Application software run on hardware<>br
 How do they run?<br>
@@ -68,13 +69,13 @@ OS handles IO Operation, allocates memory ans low level system functions.<br>
 
 *Application* --> OS --> C code --> *Complier* --> ISA --> *Assembler* --> Binary Code --> *Hardware*<br>
 
-<image 5>
+![image5](https://github.com/vamsi-2312/pes_pd/assets/142248038/01c756a1-ab75-4d42-a21e-2a46b76dd233)
 
 ISA acts as the abstract interface between C language and the Hardware(Architecture of the Hardware)
 
 ISA --> Assembler --> Binary --> RTL --> synthesis of RTL(netlist) --> Hardware(Physical Implementation of netlist)
 
-<image 6>
+![image6](https://github.com/vamsi-2312/pes_pd/assets/142248038/91cc27ce-f0c4-4b1e-93c5-f5d516adab06)
 
 ## Soc Design and Openlane
 
@@ -95,26 +96,26 @@ Collection of files used to model fabrication process for the EDA tools used to 
 * I/O Libraries
 * etc
 
-<image 7>
+![image7](https://github.com/vamsi-2312/pes_pd/assets/142248038/8282aad1-2db3-4c67-8b99-6ea8e9eb8e69)
 
 ### **Simplified RTL to GDSII Flow**
 
 RTL -> Synthesis -> Floor and Power Planning -> Placement of Cells -> Clock Tree Synthesis  -> Routing -> Sign Off -> GDSII<br>
 
-<image 8>
+![image8](https://github.com/vamsi-2312/pes_pd/assets/142248038/23ddbf4c-bdcc-436e-9693-9dfbfec48453)
 
 *Sythesis*<br>
 Converts RTL to a circuit out of componets from the standard cell library(SCL)<br>
 
-<image 9>
+![image9](https://github.com/vamsi-2312/pes_pd/assets/142248038/bbb1a2c5-76df-4dde-9ab5-8f50d2ab57cb)
 
 *Floor and Power Planning*<br>
 
-<image 10>
+![image10](https://github.com/vamsi-2312/pes_pd/assets/142248038/6bb51aae-d893-412c-a1ec-ef3dd5a8f2dc)
 
-<image 11>
+![image11](https://github.com/vamsi-2312/pes_pd/assets/142248038/1c52ec3a-0b12-46ca-ab7f-c982eda180e7)
 
-<image 12>
+![image12](https://github.com/vamsi-2312/pes_pd/assets/142248038/749b7d89-2c72-40b8-a244-a221f903da61)
 
 Connecting power supply from VDD.<br>
 
