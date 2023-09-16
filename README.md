@@ -258,4 +258,13 @@ run_synthesis
 ![image28](https://github.com/vamsi-2312/pes_pd/assets/142248038/a39df1a0-92d8-4086-82f3-407ac3cf1a0d)
 
 We can observe the results in the runs folder
+
+![Screenshot from 2023-09-16 18-31-43](https://github.com/vamsi-2312/pes_pd/assets/142248038/dc52f3a3-51f6-4356-b31c-3310a23951f0)
+![calimg2](https://github.com/vamsi-2312/pes_pd/assets/142248038/42ed2e89-a308-41a2-b749-b699a099f461)
+
+We are getting flip flop ratio as 10.8% <br>
+
+![netlist_gen](https://github.com/vamsi-2312/pes_pd/assets/142248038/9fe8ffb5-162f-4b65-a25e-404df04f33b0)
+
+Netlist generated
 </details>
