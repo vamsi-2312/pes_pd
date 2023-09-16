@@ -122,7 +122,7 @@ Connecting power supply from VDD.<br>
 *Placement*<br>
 place the cells on the floorplan rows, aligned with the sites.<br>
 
-<image 13>
+![image13](https://github.com/vamsi-2312/pes_pd/assets/142248038/862e7259-49d1-4460-b71d-799357ee997e)
 
 2 steps
 * Global placement
@@ -133,12 +133,12 @@ place the cells on the floorplan rows, aligned with the sites.<br>
 * to attain minimum skew
 * usally in shape of tree
 
-<image 14>
+![image14](https://github.com/vamsi-2312/pes_pd/assets/142248038/cf73679f-b3fd-4c30-b0af-f776985fe0dd)
 
 *Routing*<br>
 Interconnect using metal layers
 
-<image 15>
+![image15](https://github.com/vamsi-2312/pes_pd/assets/142248038/757d22d6-e846-4505-81d6-522e2977033b)
 
 Global Routing - generated routing guides.<br>
 Detailed Routing - Using the routing guides to implement the actual wiring.<br>
@@ -175,7 +175,7 @@ Design Space Exploration
 
 ### **OpenLane ASIC Flow**
 
-<image 16>
+![image16](https://github.com/vamsi-2312/pes_pd/assets/142248038/c7dee39a-9fe8-4ede-8e54-c5ffa375e4a6)
 
 + RTL Synthesis with constraints is done using Yosys and abc
 + The design exploration utility is also used for regression testing.
@@ -202,13 +202,13 @@ cd Desktop
 
 we will be using sky130 pdk
 
-<image 17>
+![image17](https://github.com/vamsi-2312/pes_pd/assets/142248038/204392df-84a8-4873-8909-fe8ef1d81c53)
 
 tools files
-<image 18>
+![image18](https://github.com/vamsi-2312/pes_pd/assets/142248038/2920e46a-87da-41e0-a160-004aa23ccc6a)
 
 process files
-<image 19>
+![image19](https://github.com/vamsi-2312/pes_pd/assets/142248038/d2d3cb64-a8a5-47b0-a4c0-924dbdf94d7b)
 
 Openlane is used to automate rtl to gds flow<br>
 
@@ -218,36 +218,36 @@ cd ~/Desktop/work/tools/openlane_working_dir/openlane
 ```
 docker
 ```
-<image 20>
+![image20](https://github.com/vamsi-2312/pes_pd/assets/142248038/079f2f22-412c-450e-bd29-3c3e598c5546)
 
 ```
 ./flow.tcl -interactive
 ```
-<image 21>
+![image21](https://github.com/vamsi-2312/pes_pd/assets/142248038/42ccb948-63b2-476c-b1cc-0afa73b20b21)
 
 ```
 package reqire openlane 0.9
 ```
 list of designs already present in openlane
 
-<image 22>
+![image22](https://github.com/vamsi-2312/pes_pd/assets/142248038/004acec0-75fe-46be-b000-05b8ef3f745b)
 
-<image 23>
+![image23](https://github.com/vamsi-2312/pes_pd/assets/142248038/1e503208-7a4b-4cd8-b6f2-5c0a5262e15c)
 
-<image 24>
+![image24](https://github.com/vamsi-2312/pes_pd/assets/142248038/9efa9e1a-13d3-4b7d-88ed-a8b049e0ac1e)
 
 design setup stage(preparing stage)
 ```
 prep -design picorv32a
 ```
 
-<image 25>
+![image25](https://github.com/vamsi-2312/pes_pd/assets/142248038/770c5449-2d93-4a5d-8008-9237e8762228)
 
 we can see that runs getting created
 
-<image 26>
+![image26](https://github.com/vamsi-2312/pes_pd/assets/142248038/e7f86f88-e105-4f54-87d6-2f0072caf7d5)
 
-<image 27>
+![image27](https://github.com/vamsi-2312/pes_pd/assets/142248038/56b109e6-5a2f-43ed-825b-b62078b683b9)
 
 coming back to openlane
 
@@ -255,7 +255,7 @@ lets run the synthesis
 ```
 run_synthesis
 ```
-<image 28>
+![image28](https://github.com/vamsi-2312/pes_pd/assets/142248038/a39df1a0-92d8-4086-82f3-407ac3cf1a0d)
 
 We can observe the results in the runs folder
 </details>
