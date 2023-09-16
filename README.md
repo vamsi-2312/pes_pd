@@ -226,7 +226,7 @@ docker
 ![image21](https://github.com/vamsi-2312/pes_pd/assets/142248038/42ccb948-63b2-476c-b1cc-0afa73b20b21)
 
 ```
-package reqire openlane 0.9
+package require openlane 0.9
 ```
 list of designs already present in openlane
 
