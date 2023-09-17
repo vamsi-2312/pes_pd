@@ -6,7 +6,7 @@
 
 ### **In this repository will be covering the `Physcial Design` Part of our Course.**
 
-This is Week 3 of our course, th contents of week 1,2 are in this repository<br> https://github.com/vamsi-2312/pes_asic_class
+This is Week 3 of our course, the contents of week 1,2 are in this repository<br> https://github.com/vamsi-2312/pes_asic_class
 <br>
 
 Week 1 - Introduction<br>
@@ -19,6 +19,28 @@ Week 3 - Physical Design<br>
 * How to talk to computers.
 * Soc Design and Openlane
 * Open Source EDA Tools.
+
+### + Contents of Day 2
+* Chip Floor planning considerations.
+* Library Binding and Placement
+* Cell Design and Characterisation flow.
+* General timinig and Characterisation parameters.
+
+### + Contents of Day 3
+* Labs for CMOS inverter ngspice simulations.
+* Inception of Layout CMOS fabrication process.
+* sky130 Tech file Labs
+
+### + Contents of Day 4
+* Timing modeling using delays.
+* Timing analysis with ideal clocks using openSTA
+* Clock tree synthesis TritonCTS and signal integrity.
+* Timing analysis with real clocks using openTA
+
+### + Contents of Day 5
+* Routing and Design rule check(DRC)
+* Power Distribution Network and routing.
+* TritonRoute Features.
 
 ## Course
 <details>
@@ -267,4 +289,297 @@ We are getting flip flop ratio as 10.8% <br>
 ![netlist_gen](https://github.com/vamsi-2312/pes_pd/assets/142248038/9fe8ffb5-162f-4b65-a25e-404df04f33b0)
 
 Netlist generated
+</details>
+
+<details>
+<summary> Week 3 -> Day 2 </summary><br>
+
+## Contents of Day 2
++ Chip Floor planning considerations.
++ Library Binding and Placement
++ Cell Design and Characterisation flow.
++ General timinig and Characterisation parameters.
+
+## Chip Floor planning considerations
+
+How to come up with the Width and Height of the Core and Die
+<image 1>
+
+we will start with basic netlist
+<image2>
+contains flipflops, and gate, or gate
+
+we are mostly intreseted in the dimensions of the standard cells.
+
+Lets start with rough dimensions of Standard cells and Flip flops as 1unit x 1unit, area = 1sq. unit
+<image 3>
+
+lets calculate the area occupied by the netlist on a silicon wafer.
+arranging the cells and flip flops
+<image4>
+
+What is the core and die of the chip?
+A die which consists of core, is smallsemiconductor material specimen on which the fundamental circuit is fabricted.
+We imprint the die multiple times in the chip.
+<image5>
+
+The netlist occuping 4sq. units in placed inside the core.
+In this case we are at 100% utilization of the core area, because the logial cells occupies the complete are of the core.
+<image6>
+Utilization Factor = (Area Occupied by netlist)/(Total Area of the Core)
+Utilization factor = 1
+
+Usually we design with utilization factor of 0.5, 0.6
+
+Aspect Ratio = Height/Width
+Aspect Ratio = 1(square chip)
+
+If the aspect ratio is other than 1, it means that the chip is in rectangular shape.
+
+lets take another example,
+<image7>
+utilization factor = 0.5 (only 50% is being used, 50% is free)
+aspect ratio = 0.5 (rectangle chip)
+
+<image8>
+utilization factor = 0.25
+aspect ratio = 1 (sqaure chip)
+
+Next step is Define the Locations of Perplaced cells.
+What are preplaced cells - Preplaced cells in semiconductor design are manually positioned blocks on an integrated circuit chip. Unlike standard cells, they offer custom functionality, with fixed placements to optimize chip performance, power, and connectivity. Designers strategically place them to meet specific design requirements and ensure overall chip functionality.
+
+<image9>
+1. combinational logic
+2. Cut into 2 halves
+3. Put each half in one block and connect them.
+4. Black box the boxs
+5. Seperate the Black boxex as two different IP's or modules.
+Then we can use this modules multiple times, rather than wrting everything.
+<image10>
+
+Similary there are other IP's also available
+<image11>
+
+The arrangement of these IP's in a chip is refered as `FloorPlanning`.
+These IP's/blocks have user-defined loations, and hence are placed in chip before automated placement and routing are called as pre-placed cells.
+Automated placement and routing tools places the remaining logical cells in the design onto chip.
+
+Once these Preplaced cells are fixed, they arent going to be changed.
+
+Preplaced cells are placed nearer to the input side, and their locations are going to changed.
+Next we need to surround the preplaced cells with decoupling capacitors.
+
+To prevent the delay in charging and discharging of the capacitor by the voltge source which is far away, we use decoupling capacitors which is completed filled with charge to voltage source. we call it decoupling capacitor because it decouples the circuit from the main supply. now there will be no drop in votage.
+<image12>
+<image13>
+Placing the preplaced cells and decoupling capacitors.
+<image14>
+
+Next step is Power Planning.
+We need to transfer the value long the red line.
+Lets assume the read line is a 16-bit bus and i connected to an inverter.
+<image15>
+At once all the ones are made zero, and zeros are made ones, due to this there is bump in the ground tap point as all 16-bit are connected to the same ground.
+<image16>
+The phenomenon is called ground bounce and it will eventually settle down.
+If the capacitors are charging from low to high, there is a Voltage drop in the Supply Voltage.
+<image17>
+This issue is coming because we are having only one power supply, it was having multiple power supplies we would have this issue. Now we are going to have multiple power supplies.
+<image18>
+It is called as mesh.
+<image19>
+
+Next step is Pin Placement.
+lets take an example
+<image20>
+<image21>
+the complete design
+<image22>
+
+The connectivity informtion beteen the gates is codes using VHDL and is called as the Netlist.
+
+Usually we put all input ports in the left and all output ports in the right.
+The ordering the ports are random.
+<image23>
+
+We have created bigger path for clks than inputs to prevent any resistance the flow of signal.
+And in the remaining place in between the core and die we put logical cell placement blockage to prevent the automated and routing tool doesnt place any cells in this area.
+<image24>
+
+Next, Floorplan is ready for placement and routing.
+open terminal
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
+```
+```
+ls -ltr
+```
+<image24aaadell>
+```
+cat README.md
+```
+<image25dell>
+<image26dell>
+similary we have placement, CTS, routing, etc.
+<image27dell>
+
+open new terminl tab
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a
+```
+<image28dell>
+
+Start up openlane
+```
+run_synthesis
+```
+```
+run_floorplan
+```
+<image29dell>
+<image30dell>
+<image31dell>
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/floorplan
+```
+```
+less picorv32a.floorplan.def
+```
+<image32dell>
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/floorplan
+```
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+<image33dell>
+<image34dell>
+<image35dell>
+<image36dell>
+Standard cells are present at the bottom left.
+<image37dell>
+<image38dell>
+
+Next Step is Placement and Routing
+
+##  Library Binding and Placement
+
+Bind the netlist with physical cells
+The nelist is containing the cells is represented as blocks which is the actual representation in the chip.
+<image39>
+Library - contain all the information about the cells.
+It will also have different flavors of the same cells and use what we want based on the conditioin.
+<image40>
+The library also have the timing information of the cells.
+Now we need to place these cells in our floorplan.
+<image41>
+Placing the cells.
+<image42>
+<image43>
+
+OPtimize Placement
+This is the stage where we estimate length and capacitance and, based on that, insert repreaters.
+<image44>
+<image45>
+<image46>
+<image47>
+
+Need Characterisation
+Library Characterisation and modelling
+Every Design must go through if it wants to be implemented in a chip.
+Step1 : Logic Synthesis
+Step2 : FloorPlanning
+Step3 : Placement
+Step4 : CTS - Clock Tree Synthesis
+Step5 : Routing
+Step6 : Static timing Analysis
+<image48>
+<image49>
+
+One common thing across all the stages are Gates and cells.
+
+Placement occurs in 2 step - Global Placement and Detailed Placement.
+In openlane
+```
+run_placement
+```
+<image50dell>
+now to check our design after placement
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/placement
+```
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
+<image51dell>
+<image52dell>
+
+## Cell design and characterisation flows
+
+Cell Design Flow
+The Library contains all the cells and different flavors, different functionality, different sizes, Different threshold voltage, etc.
+
+The cell design flow is divided into 3 different part, inputs, design steps, outputs
+DRC and LVS Rules.
+<image53i>
+<image53>
+there are many rules.
+SPICE Models
+<image54>
+Library & User-Defined Specs
+<image55>
+<image56>
+<image57>
+<image58>
+<image59>
+Circuit Design
+<image60>
+Layout Design
+<image61>
+<image62>
+<image63>
+<image64>
+Characterisation
+We have the layout
+<image65>
+We have the descripition of the layout in form of ciruits.
+<image66>
+Now, we have extracted all that into a spice netlist.(these are the inputs available to us)
+<image67>
+1. We need to read the model files.
+2. Read the extracted spice netlist
+3. Recognise the Behaviour of the circuit.
+4. Read the Subcircuits of the circuit.
+5. Attach the necessary power supply.
+6. Apply the Stimulus.
+7. Provide the necessary capacitors.
+8. Provide the necessary similation commands.
+
+Next we need to give all the inputs from 1-8 in the form of configuration file to the **characterization software called GUNA**.
+The output of GUNA is timing,noise,power,.lib,function
+
+Classification of .lib
+1. Timing Characterisation
+2. Power Characterisation
+3. Noise characterisation
+
+## General timing characterisation parameters
+
+**Timing Characterisation**
+<image68>
+<image69>
+<image70>
+
+**Propagation Delay**
+Propagation Delay = time(out_fall_thr) - time(in_rise_thr)
+<image71>
+<image72>
+<image73>
+<image74>
+Therefore while designing the cicuit we need to take care of the Design delays and thresholds.
+
+**Transistion time**
+Transistion time = time(slew_high_fall_thr) - time(slew_low_fall_thr)
+<image75>
+
 </details>
