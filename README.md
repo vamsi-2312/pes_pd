@@ -302,109 +302,122 @@ Netlist generated
 
 ## Chip Floor planning considerations
 
-How to come up with the Width and Height of the Core and Die
-<image 1>
+How to come up with the Width and Height of the Core and Die.<br>
+![image1](https://github.com/vamsi-2312/pes_pd/assets/142248038/b8fc80da-1a20-442c-81fa-ce7f84204fc8)
 
-we will start with basic netlist
-<image2>
-contains flipflops, and gate, or gate
+we will start with basic netlist<br>
+![image2](https://github.com/vamsi-2312/pes_pd/assets/142248038/2f87c0ed-09ae-4a82-b0cb-00c620af82f9)
 
-we are mostly intreseted in the dimensions of the standard cells.
+contains flipflops, and gate, or gate<br>
 
-Lets start with rough dimensions of Standard cells and Flip flops as 1unit x 1unit, area = 1sq. unit
-<image 3>
+we are mostly intreseted in the dimensions of the standard cells.<br>
 
-lets calculate the area occupied by the netlist on a silicon wafer.
-arranging the cells and flip flops
-<image4>
+Lets start with rough dimensions of Standard cells and Flip flops as 1unit x 1unit, area = 1sq. unit<br>
+![image3](https://github.com/vamsi-2312/pes_pd/assets/142248038/0f990515-b828-4571-a72c-a6251dd69c2e)
 
-What is the core and die of the chip?
-A die which consists of core, is smallsemiconductor material specimen on which the fundamental circuit is fabricted.
-We imprint the die multiple times in the chip.
-<image5>
+lets calculate the area occupied by the netlist on a silicon wafer.<br>
+arranging the cells and flip flops<br>
+![image4](https://github.com/vamsi-2312/pes_pd/assets/142248038/36963d3a-ace4-4092-b39b-1c02bc1b65f0)
 
-The netlist occuping 4sq. units in placed inside the core.
-In this case we are at 100% utilization of the core area, because the logial cells occupies the complete are of the core.
-<image6>
-Utilization Factor = (Area Occupied by netlist)/(Total Area of the Core)
-Utilization factor = 1
+What is the core and die of the chip?<br>
+A die which consists of core, is smallsemiconductor material specimen on which the fundamental circuit is fabricted.<br>
+We imprint the die multiple times in the chip.<br>
+![image5](https://github.com/vamsi-2312/pes_pd/assets/142248038/d10fc15d-3269-48c2-a654-fa889d443c7b)
 
-Usually we design with utilization factor of 0.5, 0.6
+The netlist occuping 4sq. units in placed inside the core.<br>
+In this case we are at 100% utilization of the core area, because the logial cells occupies the complete are of the core.<br>
+![image6](https://github.com/vamsi-2312/pes_pd/assets/142248038/b154b5e8-dc87-40e5-aa47-7896fd65af25)
 
-Aspect Ratio = Height/Width
-Aspect Ratio = 1(square chip)
+Utilization Factor = (Area Occupied by netlist)/(Total Area of the Core)<br>
+Utilization factor = 1<br>
 
-If the aspect ratio is other than 1, it means that the chip is in rectangular shape.
+Usually we design with utilization factor of 0.5, 0.6<br>
 
-lets take another example,
-<image7>
-utilization factor = 0.5 (only 50% is being used, 50% is free)
-aspect ratio = 0.5 (rectangle chip)
+Aspect Ratio = Height/Width<br>
+Aspect Ratio = 1(square chip)<br>
 
-<image8>
-utilization factor = 0.25
-aspect ratio = 1 (sqaure chip)
+If the aspect ratio is other than 1, it means that the chip is in rectangular shape.<br>
 
-Next step is Define the Locations of Perplaced cells.
-What are preplaced cells - Preplaced cells in semiconductor design are manually positioned blocks on an integrated circuit chip. Unlike standard cells, they offer custom functionality, with fixed placements to optimize chip performance, power, and connectivity. Designers strategically place them to meet specific design requirements and ensure overall chip functionality.
+lets take another example,<br>
+![image7](https://github.com/vamsi-2312/pes_pd/assets/142248038/0fc0ee58-8a58-4443-abd2-40e3bcc60d3f)
 
-<image9>
+utilization factor = 0.5 (only 50% is being used, 50% is free)<br>
+aspect ratio = 0.5 (rectangle chip)<br>
+
+![image8](https://github.com/vamsi-2312/pes_pd/assets/142248038/1518cdca-11b5-424b-8fde-5da9389e4f71)
+
+utilization factor = 0.25<br>
+aspect ratio = 1 (sqaure chip)<br>
+
+Next step is Define the Locations of Perplaced cells.<br>
+What are preplaced cells - Preplaced cells in semiconductor design are manually positioned blocks on an integrated circuit chip. Unlike standard cells, they offer custom functionality, with fixed placements to optimize chip performance, power, and connectivity. Designers strategically place them to meet specific design requirements and ensure overall chip functionality.<br>
+
+![image9](https://github.com/vamsi-2312/pes_pd/assets/142248038/9499696e-5e05-4937-9134-78bacd8be5af)
+
 1. combinational logic
 2. Cut into 2 halves
 3. Put each half in one block and connect them.
 4. Black box the boxs
 5. Seperate the Black boxex as two different IP's or modules.
-Then we can use this modules multiple times, rather than wrting everything.
-<image10>
+Then we can use this modules multiple times, rather than wrting everything.<br>
+![image10](https://github.com/vamsi-2312/pes_pd/assets/142248038/484fb214-29ba-41ee-9c87-a24998777e79)
 
-Similary there are other IP's also available
-<image11>
+Similary there are other IP's also available<br>
+![image11](https://github.com/vamsi-2312/pes_pd/assets/142248038/a56a6fc9-f818-443d-9f95-5359b183c95e)
 
-The arrangement of these IP's in a chip is refered as `FloorPlanning`.
-These IP's/blocks have user-defined loations, and hence are placed in chip before automated placement and routing are called as pre-placed cells.
-Automated placement and routing tools places the remaining logical cells in the design onto chip.
+The arrangement of these IP's in a chip is refered as `FloorPlanning`.<br>
+These IP's/blocks have user-defined loations, and hence are placed in chip before automated placement and routing are called as pre-placed cells.<br>
+Automated placement and routing tools places the remaining logical cells in the design onto chip.<br>
 
-Once these Preplaced cells are fixed, they arent going to be changed.
+Once these Preplaced cells are fixed, they arent going to be changed.<br>
 
-Preplaced cells are placed nearer to the input side, and their locations are going to changed.
-Next we need to surround the preplaced cells with decoupling capacitors.
+Preplaced cells are placed nearer to the input side, and their locations are going to changed.<>br
+Next we need to surround the preplaced cells with `decoupling capacitors`.<br>
 
-To prevent the delay in charging and discharging of the capacitor by the voltge source which is far away, we use decoupling capacitors which is completed filled with charge to voltage source. we call it decoupling capacitor because it decouples the circuit from the main supply. now there will be no drop in votage.
-<image12>
-<image13>
-Placing the preplaced cells and decoupling capacitors.
-<image14>
+To prevent the delay in charging and discharging of the capacitor by the voltge source which is far away, we use decoupling capacitors which is completed filled with charge to voltage source. we call it decoupling capacitor because it decouples the circuit from the main supply. now there will be no drop in votage.<br>
+![image12](https://github.com/vamsi-2312/pes_pd/assets/142248038/f34bb459-b0e4-42fd-bdf4-d185500a376f)
 
-Next step is Power Planning.
-We need to transfer the value long the red line.
-Lets assume the read line is a 16-bit bus and i connected to an inverter.
-<image15>
-At once all the ones are made zero, and zeros are made ones, due to this there is bump in the ground tap point as all 16-bit are connected to the same ground.
-<image16>
-The phenomenon is called ground bounce and it will eventually settle down.
-If the capacitors are charging from low to high, there is a Voltage drop in the Supply Voltage.
-<image17>
-This issue is coming because we are having only one power supply, it was having multiple power supplies we would have this issue. Now we are going to have multiple power supplies.
-<image18>
-It is called as mesh.
-<image19>
+![image13](https://github.com/vamsi-2312/pes_pd/assets/142248038/faf8f9fe-decf-4905-8d5e-b5ccedb6df5a)
 
-Next step is Pin Placement.
-lets take an example
-<image20>
-<image21>
-the complete design
-<image22>
+Placing the preplaced cells and decoupling capacitors.<br>
+![image14](https://github.com/vamsi-2312/pes_pd/assets/142248038/88ac1d7f-7cb2-483f-925f-bf00a8eeb183)
 
-The connectivity informtion beteen the gates is codes using VHDL and is called as the Netlist.
+Next step is Power Planning.<br>
+We need to transfer the value long the red line.<br>
+Lets assume the read line is a 16-bit bus and i connected to an inverter.<br>
+![image15](https://github.com/vamsi-2312/pes_pd/assets/142248038/c7f946b9-0029-49ba-990f-9e1fd8f2ee40)
 
-Usually we put all input ports in the left and all output ports in the right.
-The ordering the ports are random.
-<image23>
+At once all the ones are made zero, and zeros are made ones, due to this there is bump in the ground tap point as all 16-bit are connected to the same ground.<br>
+![image16](https://github.com/vamsi-2312/pes_pd/assets/142248038/e8473520-31dc-47ab-8873-9bda4f89b9d6)
 
-We have created bigger path for clks than inputs to prevent any resistance the flow of signal.
-And in the remaining place in between the core and die we put logical cell placement blockage to prevent the automated and routing tool doesnt place any cells in this area.
-<image24>
+The phenomenon is called ground bounce and it will eventually settle down.<br>
+If the capacitors are charging from low to high, there is a Voltage drop in the Supply Voltage.<br>
+![image17](https://github.com/vamsi-2312/pes_pd/assets/142248038/4d61bb1e-d634-4822-b932-c8af5ba3e966)
+
+This issue is coming because we are having only one power supply, it was having multiple power supplies we would have this issue. Now we are going to have multiple power supplies.<br>
+![image18](https://github.com/vamsi-2312/pes_pd/assets/142248038/e9444942-aa20-4a32-80d9-27a17721042e)
+
+It is called as mesh.<br>
+![image19](https://github.com/vamsi-2312/pes_pd/assets/142248038/7b0b49f3-fab5-4e0a-990b-38ffe02794b8)
+
+Next step is Pin Placement.<br>
+lets take an example<br>
+![image20](https://github.com/vamsi-2312/pes_pd/assets/142248038/2bd1789e-9edf-4de6-9a43-886066ea37cf)
+
+![image21](https://github.com/vamsi-2312/pes_pd/assets/142248038/973df839-2ba7-4f1f-a45a-3dc1f68988e0)
+
+the complete design<br>
+![image22](https://github.com/vamsi-2312/pes_pd/assets/142248038/00f878f2-eca3-49a1-ae4e-2a4d38ea83b6)
+
+The connectivity informtion beteen the gates is codes using VHDL and is called as the Netlist.<br>
+
+Usually we put all input ports in the left and all output ports in the right.<br>
+The ordering the ports are random.<br>
+![image23](https://github.com/vamsi-2312/pes_pd/assets/142248038/07f15ba4-ba2e-4c4f-961f-6d503c2786f3)
+
+We have created bigger path for clks than inputs to prevent any resistance the flow of signal.<br>
+And in the remaining place in between the core and die we put logical cell placement blockage to prevent the automated and routing tool doesnt place any cells in this area.<br>
+![image24](https://github.com/vamsi-2312/pes_pd/assets/142248038/4cb27f37-5219-45ce-a65f-40e99bdc9526)
 
 Next, Floorplan is ready for placement and routing.
 open terminal
