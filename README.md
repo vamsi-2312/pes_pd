@@ -555,31 +555,47 @@ The Library contains all the cells and different flavors, different functionalit
 
 The cell design flow is divided into 3 different part, inputs, design steps, outputs<br>
 DRC and LVS Rules.<br>
-<image53i>
-<image53>
+![image53i](https://github.com/vamsi-2312/pes_pd/assets/142248038/4b4429a4-cf66-4b05-85a0-5bb602a0d88b)
+
+![image53](https://github.com/vamsi-2312/pes_pd/assets/142248038/22203a12-3fe6-4c4f-b653-984a7bac698f)
+
 there are many rules.<br>
 SPICE Models<br>
-<image54>
+![image54](https://github.com/vamsi-2312/pes_pd/assets/142248038/ca86486d-7d3a-4989-bf28-056f0dc3bca0)
+
 Library & User-Defined Specs<br>
-<image55>
-<image56>
-<image57>
-<image58>
-<image59>
+![image55](https://github.com/vamsi-2312/pes_pd/assets/142248038/036709bf-c434-4102-aef7-f1f5df84a571)
+
+![image56](https://github.com/vamsi-2312/pes_pd/assets/142248038/09b00652-99c4-4093-8fb8-2f621f79e1b7)
+
+![image57](https://github.com/vamsi-2312/pes_pd/assets/142248038/dbb0a5b8-d4c6-489c-ae47-bf12c09cfcfb)
+
+![image58](https://github.com/vamsi-2312/pes_pd/assets/142248038/94f07b53-c116-43bf-88ab-810ff4b3bbfa)
+
+![image59](https://github.com/vamsi-2312/pes_pd/assets/142248038/bc30febe-7b1f-401a-a68a-049247535528)
+
 Circuit Design<br>
-<image60>
+![image60](https://github.com/vamsi-2312/pes_pd/assets/142248038/cfae029c-983f-4b48-a2d5-8540dd2bfc36)
+
 Layout Design<br>
-<image61>
-<image62>
-<image63>
-<image64>
+![image61](https://github.com/vamsi-2312/pes_pd/assets/142248038/8c309861-41ea-4e91-ae7e-c5b77d04e4d9)
+
+![image62](https://github.com/vamsi-2312/pes_pd/assets/142248038/5b178e42-0778-4b91-b580-cf713fe0b7ff)
+
+![image63](https://github.com/vamsi-2312/pes_pd/assets/142248038/68db6ed1-5d2e-4b6c-9f79-bfb8ec4a89e0)
+
+![image64](https://github.com/vamsi-2312/pes_pd/assets/142248038/05272e31-b1a3-49bd-9a62-999256a4d302)
+
 Characterisation<br>
 We have the layout<br>
-<image65>
+![image65](https://github.com/vamsi-2312/pes_pd/assets/142248038/1002d277-0eef-4ffb-ba5e-50a540562a49)
+
 We have the descripition of the layout in form of ciruits.<br>
-<image66>
+![image66](https://github.com/vamsi-2312/pes_pd/assets/142248038/90cefa74-6940-4e08-a562-f20008c97331)
+
 Now, we have extracted all that into a spice netlist.(these are the inputs available to us)<br>
-<image67>
+![image67](https://github.com/vamsi-2312/pes_pd/assets/142248038/5da5c94a-9f8b-4743-800b-1787716e8790)
+
 1. We need to read the model files.
 2. Read the extracted spice netlist
 3. Recognise the Behaviour of the circuit.
@@ -600,20 +616,27 @@ Classification of .lib<br>
 ## General timing characterisation parameters
 
 **Timing Characterisation**
-<image68>
-<image69>
-<image70>
+![image68](https://github.com/vamsi-2312/pes_pd/assets/142248038/374af282-3ef7-4d5c-8cb8-7aaf78450ef8)
+
+![image69](https://github.com/vamsi-2312/pes_pd/assets/142248038/ee89c13c-0ceb-4e15-9acf-9ae652591273)
+
+![image70](https://github.com/vamsi-2312/pes_pd/assets/142248038/ae89f5b7-36e3-4314-ae0b-952ea3a89ed9)
+
 
 **Propagation Delay**
 Propagation Delay = time(out_fall_thr) - time(in_rise_thr)<br>
-<image71>
-<image72>
-<image73>
-<image74>
+![image71](https://github.com/vamsi-2312/pes_pd/assets/142248038/965e93a8-bac3-42bd-8819-b8e3112b79d2)
+
+![image72](https://github.com/vamsi-2312/pes_pd/assets/142248038/536a317d-c19d-41a7-adf3-4c450cd51d8f)
+
+![image73](https://github.com/vamsi-2312/pes_pd/assets/142248038/be73d9a3-bfeb-48d6-86c6-b3920c8379ac)
+
+![image74](https://github.com/vamsi-2312/pes_pd/assets/142248038/1ea5994b-4e5b-43eb-85bd-95b94fda4400)
+
 Therefore while designing the cicuit we need to take care of the Design delays and thresholds.<br>
 
 **Transistion time**
 Transistion time = time(slew_high_fall_thr) - time(slew_low_fall_thr)<br>
-<image75>
+![image75](https://github.com/vamsi-2312/pes_pd/assets/142248038/a86db6d8-45ba-430a-b2a8-3f9e21ca2372)
 
 </details>
