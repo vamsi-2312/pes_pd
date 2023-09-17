@@ -419,61 +419,72 @@ We have created bigger path for clks than inputs to prevent any resistance the f
 And in the remaining place in between the core and die we put logical cell placement blockage to prevent the automated and routing tool doesnt place any cells in this area.<br>
 ![image24](https://github.com/vamsi-2312/pes_pd/assets/142248038/4cb27f37-5219-45ce-a65f-40e99bdc9526)
 
-Next, Floorplan is ready for placement and routing.
-open terminal
+Next, Floorplan is ready for placement and routing.<br>
+open terminal<br>
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
 ```
 ```
 ls -ltr
 ```
-<image24aaadell>
+![image24aaadell](https://github.com/vamsi-2312/pes_pd/assets/142248038/1fa30691-d607-41ce-a5e1-aa469c3d18e9)
 ```
 cat README.md
 ```
-<image25dell>
-<image26dell>
-similary we have placement, CTS, routing, etc.
-<image27dell>
+![image25dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/377e40a6-eb07-4846-8662-99c2133d5ba5)
 
-open new terminl tab
+![image26dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/edbc5a3d-800e-4610-ac12-002b3a55ae1c)
+
+similary we have placement, CTS, routing, etc.<br>
+![image27dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/1574ec80-beb8-45e3-92e2-de40216125e9)
+
+open new terminl tab<br>
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a
 ```
-<image28dell>
+![image28dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/ea579514-c486-41cb-947b-6aa812d9d5f8)
 
-Start up openlane
+Start up openlane<br>
 ```
 run_synthesis
 ```
 ```
 run_floorplan
 ```
-<image29dell>
-<image30dell>
-<image31dell>
+![image29dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/0b65db51-145c-4d77-b79c-fcb3b2b115b2)
+
+![image30dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/b903785c-d237-47ec-bade-71b204f8c6c0)
+
+![image31dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/eddf3dfc-72cc-46fc-9354-12c42c3aad1e)
+
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/floorplan
 ```
 ```
 less picorv32a.floorplan.def
 ```
-<image32dell>
+![image32dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/ffe283ce-464e-423d-8b11-0fdf213408ae)
+
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/floorplan
 ```
 ```
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
-<image33dell>
-<image34dell>
-<image35dell>
-<image36dell>
-Standard cells are present at the bottom left.
-<image37dell>
-<image38dell>
+![image33dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/7eb70075-62a6-4f2a-a6aa-5503d00a2649)
 
-Next Step is Placement and Routing
+![image34dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/21906e06-8387-49ed-924f-f36eb1ee2600)
+
+![image35dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/a715c463-ab94-45c9-8210-53b332317ee0)
+
+![image36dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/00e8935e-af67-4002-a6b6-0f8a45a8878a)
+
+Standard cells are present at the bottom left.<br>
+![image37dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/0a35aa28-5b0a-4054-b308-3d6a69594752)
+
+![image38dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/9e27ff91-cae0-4c26-8e0a-5a6cc4dae53d)
+
+Next Step is Placement and Routing<br>
 
 ##  Library Binding and Placement
 
