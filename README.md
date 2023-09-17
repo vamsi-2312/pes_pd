@@ -535,48 +535,50 @@ In openlane<br>
 ```
 run_placement
 ```
-<image50dell>
-now to check our design after placement
+![image50dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/29a6f99f-b1e7-4886-b12b-f43f5db9cc8f)
+
+now to check our design after placement<br>
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/placement
 ```
 ```
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
-<image51dell>
-<image52dell>
+![image51dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/e911f63b-1aef-4d26-9773-8a1f2a26dee9)
+
+![image52dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/24ad2c4f-94dc-4763-b962-59949b4bb798)
 
 ## Cell design and characterisation flows
 
-Cell Design Flow
-The Library contains all the cells and different flavors, different functionality, different sizes, Different threshold voltage, etc.
+Cell Design Flow<br>
+The Library contains all the cells and different flavors, different functionality, different sizes, Different threshold voltage, etc.<br>
 
-The cell design flow is divided into 3 different part, inputs, design steps, outputs
-DRC and LVS Rules.
+The cell design flow is divided into 3 different part, inputs, design steps, outputs<br>
+DRC and LVS Rules.<br>
 <image53i>
 <image53>
-there are many rules.
-SPICE Models
+there are many rules.<br>
+SPICE Models<br>
 <image54>
-Library & User-Defined Specs
+Library & User-Defined Specs<br>
 <image55>
 <image56>
 <image57>
 <image58>
 <image59>
-Circuit Design
+Circuit Design<br>
 <image60>
-Layout Design
+Layout Design<br>
 <image61>
 <image62>
 <image63>
 <image64>
-Characterisation
-We have the layout
+Characterisation<br>
+We have the layout<br>
 <image65>
-We have the descripition of the layout in form of ciruits.
+We have the descripition of the layout in form of ciruits.<br>
 <image66>
-Now, we have extracted all that into a spice netlist.(these are the inputs available to us)
+Now, we have extracted all that into a spice netlist.(these are the inputs available to us)<br>
 <image67>
 1. We need to read the model files.
 2. Read the extracted spice netlist
@@ -587,10 +589,10 @@ Now, we have extracted all that into a spice netlist.(these are the inputs avail
 7. Provide the necessary capacitors.
 8. Provide the necessary similation commands.
 
-Next we need to give all the inputs from 1-8 in the form of configuration file to the **characterization software called GUNA**.
-The output of GUNA is timing,noise,power,.lib,function
+Next we need to give all the inputs from 1-8 in the form of configuration file to the **characterization software called GUNA**.<br>
+The output of GUNA is timing,noise,power,.lib,function<br>
 
-Classification of .lib
+Classification of .lib<br>
 1. Timing Characterisation
 2. Power Characterisation
 3. Noise characterisation
@@ -603,15 +605,15 @@ Classification of .lib
 <image70>
 
 **Propagation Delay**
-Propagation Delay = time(out_fall_thr) - time(in_rise_thr)
+Propagation Delay = time(out_fall_thr) - time(in_rise_thr)<br>
 <image71>
 <image72>
 <image73>
 <image74>
-Therefore while designing the cicuit we need to take care of the Design delays and thresholds.
+Therefore while designing the cicuit we need to take care of the Design delays and thresholds.<br>
 
 **Transistion time**
-Transistion time = time(slew_high_fall_thr) - time(slew_low_fall_thr)
+Transistion time = time(slew_high_fall_thr) - time(slew_low_fall_thr)<br>
 <image75>
 
 </details>
