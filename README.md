@@ -488,42 +488,50 @@ Next Step is Placement and Routing<br>
 
 ##  Library Binding and Placement
 
-Bind the netlist with physical cells
-The nelist is containing the cells is represented as blocks which is the actual representation in the chip.
-<image39>
-Library - contain all the information about the cells.
-It will also have different flavors of the same cells and use what we want based on the conditioin.
-<image40>
-The library also have the timing information of the cells.
-Now we need to place these cells in our floorplan.
-<image41>
-Placing the cells.
-<image42>
-<image43>
+Bind the netlist with physical cells.<br>
+The nelist is containing the cells is represented as blocks which is the actual representation in the chip.<br>
+![image39](https://github.com/vamsi-2312/pes_pd/assets/142248038/6aac2d0d-c48e-4aa2-880c-1cb8d96c9c4a)
 
-OPtimize Placement
-This is the stage where we estimate length and capacitance and, based on that, insert repreaters.
-<image44>
-<image45>
-<image46>
-<image47>
+Library - contain all the information about the cells.<br>
+It will also have different flavors of the same cells and use what we want based on the conditioin.<br>
+![image40](https://github.com/vamsi-2312/pes_pd/assets/142248038/b233fcdc-d8cc-4088-a9d5-97e0863916ad)
 
-Need Characterisation
-Library Characterisation and modelling
-Every Design must go through if it wants to be implemented in a chip.
-Step1 : Logic Synthesis
-Step2 : FloorPlanning
-Step3 : Placement
-Step4 : CTS - Clock Tree Synthesis
-Step5 : Routing
-Step6 : Static timing Analysis
-<image48>
-<image49>
+The library also have the timing information of the cells.<br>
+Now we need to place these cells in our floorplan.<br>
+![image41](https://github.com/vamsi-2312/pes_pd/assets/142248038/622b13eb-6b4a-4260-9046-d0d5a6ab0134)
 
-One common thing across all the stages are Gates and cells.
+Placing the cells.<br>
+![image42](https://github.com/vamsi-2312/pes_pd/assets/142248038/aa5ec0cf-c8dd-435c-9b5f-8201ce80a8c9)
 
-Placement occurs in 2 step - Global Placement and Detailed Placement.
-In openlane
+![image43](https://github.com/vamsi-2312/pes_pd/assets/142248038/574816a4-d10b-4182-9cb6-b12544e11e93)
+
+OPtimize Placement<br>
+This is the stage where we estimate length and capacitance and, based on that, insert repreaters.<br>
+![image44](https://github.com/vamsi-2312/pes_pd/assets/142248038/87e00c3c-ec5a-4aec-acec-930113f224f2)
+
+![image45](https://github.com/vamsi-2312/pes_pd/assets/142248038/288113d4-70ee-4c49-9e4b-c8ab1494efe2)
+
+![image46](https://github.com/vamsi-2312/pes_pd/assets/142248038/4bf8d314-c829-4ea8-9a8c-d1fdad337aa9)
+
+![image47](https://github.com/vamsi-2312/pes_pd/assets/142248038/dbe93cdd-de26-42bd-b4ef-b3f318b27586)
+
+Need Characterisation<br>
+Library Characterisation and modelling<br>
+Every Design must go through if it wants to be implemented in a chip.<br>
+Step1 : Logic Synthesis<br>
+Step2 : FloorPlanning<br>
+Step3 : Placement<br>
+Step4 : CTS - Clock Tree Synthesis<br>
+Step5 : Routing<br>
+Step6 : Static timing Analysis<br>
+![image48](https://github.com/vamsi-2312/pes_pd/assets/142248038/5c2152bd-47ab-4259-ad53-c848480ea2e2)
+
+![image49](https://github.com/vamsi-2312/pes_pd/assets/142248038/2caaff64-6882-4e22-b49f-5bbddd29f291)
+
+One common thing across all the stages are Gates and cells.<br>
+
+Placement occurs in 2 step - Global Placement and Detailed Placement.<br>
+In openlane<br>
 ```
 run_placement
 ```
