@@ -1072,7 +1072,7 @@ the drc has been resolved after putting anthor layer<br>
 + Clock tree synthesis TritonCTS and signal integrity.
 + Timing analysis with real clocks using openTA
 
-### Timing modeling using delay tables
+## Timing modeling using delay tables
 
 ** Lab to convert grid info t track info**<br>
 Extract the layout into a LEF file. <br>
@@ -1219,7 +1219,7 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 **sky130_vsdinv _14086_** <br>
 ![image18dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/fea4dfc8-a664-4145-857a-0c8a59b44aa8)
 
-### Timing analysis with ideal clocks using openSTA
+## Timing analysis with ideal clocks using openSTA
 
 ![image19](https://github.com/vamsi-2312/pes_pd/assets/142248038/ef1d1541-0bb4-447c-9b70-379f73bb2552)
 
@@ -1255,7 +1255,7 @@ By upsizing the slack is reduced.<br>
 ![image29dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/effb2f72-e501-4544-b722-138c091c216a)
 
 
-### Clock tree synthesis TritonCTS and signal integrity
+## Clock tree synthesis TritonCTS and signal integrity
 We should ideally get skew = 0<br>
 ![image30](https://github.com/vamsi-2312/pes_pd/assets/142248038/7f8a85e5-e5da-4a97-ab25-abc3ed7b4196)
 
