@@ -1066,7 +1066,7 @@ the drc has been resolved after putting anthor layer<br>
 <details>
 <summary> Week 3 -> Day 4 </summary><br>
 
-![image17dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/545f2860-68c3-4455-96f6-fd7caaa25ee7)
+![image17dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/8d0a58fc-bfc1-4763-bdc4-1891c04cba50)
 
 
 </details>
