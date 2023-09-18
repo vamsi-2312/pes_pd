@@ -1257,17 +1257,21 @@ By upsizing the slack is reduced.
 
 ### Clock tree synthesis TritonCTS and signal integrity
 We should ideally get skew = 0
-<image30>
+![image30](https://github.com/vamsi-2312/pes_pd/assets/142248038/7f8a85e5-e5da-4a97-ab25-abc3ed7b4196)
+
 Clock tree synthesis (CTS) is a crucial step in digital integrated circuit design. It optimizes clock distribution, minimizing skew and jitter, ensuring synchronous operation, and enhancing overall chip performance, critical for modern high-speed electronics.
 
 We are installing buffer, so that the signal is sent properly.
-<image31>
+![image31](https://github.com/vamsi-2312/pes_pd/assets/142248038/ebadb3fe-75dc-4ea4-bdbc-1752d758e318)
+
 
 Clock net shielding employs techniques like differential signaling, ground planes, and shielding layers to minimize electromagnetic interference and crosstalk in high-frequency clock signals. This enhances signal integrity and reduces the risk of timing errors in complex electronic systems.
-<image32>
+![image32](https://github.com/vamsi-2312/pes_pd/assets/142248038/0f81333b-80fd-4320-bbb3-db7ff7122ea8)
+
 
 Crosstalk-induced delta delay or skew can disrupt signal timing in digital circuits, causing errors and reducing performance. It results from unwanted coupling between adjacent signals, introducing unpredictable delays that can lead to data corruption and functional failures, necessitating careful signal integrity analysis and mitigation techniques.
-<image33>
+![image33](https://github.com/vamsi-2312/pes_pd/assets/142248038/17246558-85b0-4713-8384-dcc4328169e4)
+
 
 to run CTS
 in openlane
@@ -1283,13 +1287,17 @@ run_cts
 Refer Hold time and Setup time definition above.
 
 Doing Timing analysis with real clocks
-<image37>
-<image38>
+![image37](https://github.com/vamsi-2312/pes_pd/assets/142248038/85cd6adf-06f8-4ed6-bea6-4ac7814c76a2)
+
+![image38](https://github.com/vamsi-2312/pes_pd/assets/142248038/1349a260-2815-4e88-8ea9-aa43e83cb1f1)
+
 setup time slack
-<image39>
+![image39](https://github.com/vamsi-2312/pes_pd/assets/142248038/1042ca7e-f9e2-4b2f-b78b-091a382055e4)
+
 hold time slack
-<image40>
-<image41>
+![image40](https://github.com/vamsi-2312/pes_pd/assets/142248038/8b8f308c-a080-4bad-bed8-dbb104b67163)
+
+![image41](https://github.com/vamsi-2312/pes_pd/assets/142248038/21cccdb8-3880-4e3f-b052-469283375ff4)
 
 start openlane
 ```
