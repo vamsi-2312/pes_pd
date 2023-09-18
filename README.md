@@ -1056,5 +1056,4 @@ we can see that the resistor drc error are fixed.
 ![image96dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/147fba26-8d98-406a-8eb7-0d4d0f294598)
 
 
-
 </details>
