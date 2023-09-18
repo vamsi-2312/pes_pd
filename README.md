@@ -655,7 +655,7 @@ Transistion time = time(slew_high_fall_thr) - time(slew_low_fall_thr)<br>
 
 open terminal<br>
 start openlane<br>
-select the picorv32a
+select the picorv32a<br>
 ```
 run_synthesis
 ```
@@ -699,7 +699,7 @@ First we need to create a spice deck.<br>
 Spice deck -Contains the connectivity information, inputs that has to be given to the simulation, tap points.<br>
 
 1. Component Connectivity
-2. Component values.
+2. Component values.<br>
 (ideally pmos must be 2-3 times bigger than nmos)
 3. Identify nodes.
 4. Name nodes. 
@@ -767,7 +767,7 @@ magic -T sky130A.tech sky130_inv.mag &
 
 **Create Active Region**
 Lets begin with 16-mask CMOS process
-1. Selecting a Substrate.
+1. Selecting a Substrate.<br>
 Ptype, high resistivity, doping level, orientation
 2. Creating an Active region for transistors.
 3. Formation of N and P well.
@@ -792,88 +792,88 @@ Field Oxides is grown, This process is called "LOCOS" - Local Oxidation of Silic
 ![image26](https://github.com/vamsi-2312/pes_pd/assets/142248038/aaeafe64-58aa-416b-af72-7001a0f7bf8d)
 
 **N well and P well formation**
-Desposite Photoresist and mask 2
+Desposite Photoresist and mask 2<br>
 ![image27](https://github.com/vamsi-2312/pes_pd/assets/142248038/a38ec257-2a08-4522-bbbb-97000a7f1c3f)
 
-creating the P well
+creating the P well<br>
 ![image28](https://github.com/vamsi-2312/pes_pd/assets/142248038/b97526a8-9aec-4a56-91e3-9deaac90efce)
 
-Creating the N well
+Creating the N well<br>
 ![image29](https://github.com/vamsi-2312/pes_pd/assets/142248038/81668252-d3b0-480e-a78a-0c8f6e956e12)
 
-Next we need to take into High Temperature furnace which will drive-in diffusion.
+Next we need to take into High Temperature furnace which will drive-in diffusion.<br>
 ![image30](https://github.com/vamsi-2312/pes_pd/assets/142248038/8894b190-b312-4688-9639-0369fc6eff10)
 
-And this process is call Twin tub Process.
+And this process is call Twin tub Process.<br>
 ![image31](https://github.com/vamsi-2312/pes_pd/assets/142248038/dd0260c0-933b-4324-86ee-e3d6371fda51)
 
 **Formation og Gate**
 Fabrication of the gate terminal is very important.<br>
-We try to maintain the doping voltage and oxide capaitance, as they control threshold voltage.
+We try to maintain the doping voltage and oxide capaitance, as they control threshold voltage.<br>
 
 ![image32](https://github.com/vamsi-2312/pes_pd/assets/142248038/f8e466dd-4b13-4625-a795-0533ffe07283)
 
 ![image33](https://github.com/vamsi-2312/pes_pd/assets/142248038/70985f31-a870-4952-8d02-7c174812771f)
 
-the  the original oxide is etched/stripped using dilute hydrfluric(HF) solution
+the  the original oxide is etched/stripped using dilute hydrfluric(HF) solution<br>
 ![image34](https://github.com/vamsi-2312/pes_pd/assets/142248038/edd22340-19ae-4f5e-b274-a8f8c1f14bca)
 
-Then we can re-grow the oxide layer which of high quality.
-Next, deposition of polysilicon layer using CVD(chemical vapor decomposition) method
+Then we can re-grow the oxide layer which of high quality.<br>
+Next, deposition of polysilicon layer using CVD(chemical vapor decomposition) method<br>
 ![image35](https://github.com/vamsi-2312/pes_pd/assets/142248038/750e8c9c-332f-47a8-8b4b-2900eb66755f)
 
-Then again photoresist, and mask 6 for gate terminals.
+Then again photoresist, and mask 6 for gate terminals.<br>
 ![image36](https://github.com/vamsi-2312/pes_pd/assets/142248038/ad032bc2-b743-4892-b6fa-574d1683549e)
 
-Etch exposed area, then we get our terminals.
+Etch exposed area, then we get our terminals.<br>
 ![image37](https://github.com/vamsi-2312/pes_pd/assets/142248038/9e3936ad-683b-4fad-89ba-195dd8a36da2)
 
 **Lightly doped drain(LDD) formation**
-Why do we need this doping?
+Why do we need this doping?<br>
 * Hot electron effect - High nergy crrier break Si-Si bonds 3.2eV barrier between Si condution band ans SiO2 conduction band.
 * Short channel Effect - When we go for smaller length mos, then drain field penertrates channel.
 
-Create Mask 7, and create the nmos(doped with N-) in the p well.
+Create Mask 7, and create the nmos(doped with N-) in the p well.<br>
 ![image38](https://github.com/vamsi-2312/pes_pd/assets/142248038/948aad83-7c07-4694-b3a9-416f294cb2cd)
 
-Similarly Mask8, and create the pmos(doped with P-) in the n well.
+Similarly Mask8, and create the pmos(doped with P-) in the n well.<br>
 ![image39](https://github.com/vamsi-2312/pes_pd/assets/142248038/0ddd8aba-373e-47c8-b40a-ecb5360425df)
 
-Then deposite thich SiO2, after Plasma anisotropic etchiping.
+Then deposite thich SiO2, after Plasma anisotropic etchiping.<br>
 ![image40](https://github.com/vamsi-2312/pes_pd/assets/142248038/189a32a6-d502-4801-8c8f-268753f9f273)
 
-we get side wall spacers.
+we get side wall spacers.<br>
 
 **Source and Drain Formation**
-Apply Thin screen oxide is grown to aoid channeling during implantation.
-Then doping, in p well we get N+ doped region.
+Apply Thin screen oxide is grown to aoid channeling during implantation.<br>
+Then doping, in p well we get N+ doped region.<br>
 ![image41](https://github.com/vamsi-2312/pes_pd/assets/142248038/6a3d9520-6baf-4e3b-90ad-45ed8b7efedd)
 
-Then doping, in n well we get P+ doped region.
+Then doping, in n well we get P+ doped region.<br>
 ![image42](https://github.com/vamsi-2312/pes_pd/assets/142248038/704800d4-7f70-4097-8c5c-4c471460d6af)
 
 
 ![image43](https://github.com/vamsi-2312/pes_pd/assets/142248038/5c497f96-8a74-449c-9760-d0dfc2fa08ee)
 
-Then put them into high tempertaure furnace, which will push the inpurities inside, and the source and drain are formed.
+Then put them into high tempertaure furnace, which will push the inpurities inside, and the source and drain are formed.<br>
 ![image44](https://github.com/vamsi-2312/pes_pd/assets/142248038/03953ce5-04cc-4226-960a-cf55e7023c46)
 
 **Building the contacts and interconnects**
 
-First we need to remove the thhin oxide using HF solution.
-Then deposite titanium on wafer surface, using sputtering.
+First we need to remove the thhin oxide using HF solution.<br>
+Then deposite titanium on wafer surface, using sputtering.<br>
 ![image45](https://github.com/vamsi-2312/pes_pd/assets/142248038/f3d3d7c0-0d4d-4e1b-a227-d8ba0091ed00)
 
 ![image46](https://github.com/vamsi-2312/pes_pd/assets/142248038/5e7f7c2f-4ee9-4dc8-9ad3-d7eaf805922e)
 
-Then heat the wafer.
+Then heat the wafer.<br>
 ![image47](https://github.com/vamsi-2312/pes_pd/assets/142248038/7b806772-75c1-4eec-8f8f-cb293398c5a4)
 
-Low resistant TiSi2 is formed.
-There is another reaction happening, TiN is formed which is used for local communication.
+Low resistant TiSi2 is formed.<br>
+There is another reaction happening, TiN is formed which is used for local communication.<br>
 ![image48](https://github.com/vamsi-2312/pes_pd/assets/142248038/3b7bdf7c-b189-4959-b82d-f6a0328ab280)
 
-Then unwanted TiN layer is etched away using RCA cleaning.
+Then unwanted TiN layer is etched away using RCA cleaning.<br>
 ![image49](https://github.com/vamsi-2312/pes_pd/assets/142248038/201d6bff-01dd-409a-8d63-22a5145fea61)
 
 ![image50](https://github.com/vamsi-2312/pes_pd/assets/142248038/68a5beb1-4e36-4054-a108-6626db64b2d3)
@@ -881,36 +881,36 @@ Then unwanted TiN layer is etched away using RCA cleaning.
 ![image51](https://github.com/vamsi-2312/pes_pd/assets/142248038/4cf17a1b-869a-46e1-b33d-49eeae9c0fa1)
 
 **Higher level Metal Formation**
-SiO2 is deposited on wafer
+SiO2 is deposited on wafer<br>
 ![image52](https://github.com/vamsi-2312/pes_pd/assets/142248038/15c8d551-0c70-4d13-82a9-6ef3a27cf772)
 
-Chemical Mechanical polishing
+Chemical Mechanical polishing<br>
 ![image53](https://github.com/vamsi-2312/pes_pd/assets/142248038/61b7330b-e0a7-4c5e-b8ec-5acf83de03a7)
 
-Making Contacts
+Making Contacts<br>
 ![image54](https://github.com/vamsi-2312/pes_pd/assets/142248038/8e9587c0-b9bb-472d-8dbb-5a4552c2d0a5)
 
 ![image55](https://github.com/vamsi-2312/pes_pd/assets/142248038/dfe5b777-e1cc-460d-a8d7-df1fbbb060e9)
 
-Deposite Thin TiN and then lanket Tungsten layer.
+Deposite Thin TiN and then lanket Tungsten layer.<br>
 ![image56](https://github.com/vamsi-2312/pes_pd/assets/142248038/de45f354-d28c-44d0-a348-4856af606c3d)
 
-then CMP
+then CMP<br>
 ![image57](https://github.com/vamsi-2312/pes_pd/assets/142248038/de90d411-b7a8-4c2a-b466-8167a17b7152)
 
-Deposite Al layer, then Mask 13
+Deposite Al layer, then Mask 13<br>
 ![image58](https://github.com/vamsi-2312/pes_pd/assets/142248038/b26b4dfe-5f6e-4440-a980-b219327ed655)
 
-then again to define the contact hole, mask 14
+then again to define the contact hole, mask 14<br>
 ![image59](https://github.com/vamsi-2312/pes_pd/assets/142248038/6137f22e-1808-40e6-b7bb-49f4278a9bd0)
 
-mask 15
+mask 15<br>
 ![image60](https://github.com/vamsi-2312/pes_pd/assets/142248038/b428e158-d983-429a-afe4-494c963bb094)
 
-Then the last level is to deposite dielectric Si3N4 to protect the chip
+Then the last level is to deposite dielectric Si3N4 to protect the chip<br>
 ![image61](https://github.com/vamsi-2312/pes_pd/assets/142248038/32f7767a-aa34-4e6c-a250-94add80a15a0)
 
-finally
+finally<br>
 ![image62](https://github.com/vamsi-2312/pes_pd/assets/142248038/eaf2ce6b-b301-43ea-9ca0-d2f057d1b1a8)
 
 
@@ -918,32 +918,33 @@ finally
 
 ![image63dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/a7f1e7c6-b73d-4547-931a-6af7ac9bfd43)
 
-red - polysilicon 
-green - n diffusion
-peach - p diffusion
-blue - metal
+red - polysilicon <br>
+green - n diffusion<br>
+peach - p diffusion<br>
+blue - metal<br>
 ![image64dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/9ebca447-3276-4624-abec-460f7c5155b7)
 
 ![image65dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/a1b188bf-4985-4e6a-9558-43590bde45b0)
 
-drains connected to output y
+drains connected to output y<br>
 ![image66dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/d0bb1177-db18-4b76-b2ca-1f2f10d8c055)
 
-vdd connection
+vdd connection<br>
 ![image67dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/cd674e25-ca1c-44c8-a80d-ee04f35b4170)
 
-gnd connection
+gnd connection<br>
 ![image68dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/34e7ff59-dc48-448b-b6b6-85f94abbc00c)
 
-LEF is on the right it contains the meatal connection(pr boundaries and ports)
+LEF is on the right it contains the meatal connection(pr boundaries and ports)<br>
 ![image69](https://github.com/vamsi-2312/pes_pd/assets/142248038/c924e728-4563-4e81-9568-f8ff91f5e075)
 
 
 **Lab steps to create std cell layout and extract spice netlist**
-For a detailed procedure, on how to crete a standard cell visit hhtps://github.com/nickson-jose/vsdstdcelldesign
 
-Extracting infromation into spice
-In magic terminal
+For a detailed procedure, on how to crete a standard cell visit hhtps://github.com/nickson-jose/vsdstdcelldesign<br>
+
+Extracting infromation into spice<br>
+In magic terminal<br>
 ```
 extact all
 ```
@@ -954,6 +955,7 @@ extact all
 ![image72dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/eafe13c6-49ec-42a2-9b03-c9a28d4da3ca)
 
 ## Sky130 Tech file Labs
+
 ![image73dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/71fcfb5d-812c-4ef2-8f1f-cff3c502b733)
 
 ![image74dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/76baddcc-e04a-4696-81e9-5a4c17cea8fe)
@@ -963,51 +965,51 @@ extact all
 
 ![image76dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/77e32990-2aca-46f3-bba4-319c74b8e722)
 
-rise time = 80% of rise - 20% of rise = (2.8906 - 2.6491)*1E-9
+rise time = 80% of rise - 20% of rise = (2.8906 - 2.6491)*1E-9<br>
 ![image77dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/b1b1c976-6f54-4fa7-94af-52087b6e54f2)
 
-fall time = 20% of fall - 80% of fall = (0.02664)*1E-9
+fall time = 20% of fall - 80% of fall = (0.02664)*1E-9<br>
 ![image78dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/d395e964-4b42-48a5-bb87-fabfeb42d309)
 
-Cell rise delay = 50% of output - 50% of input = (0.005324)*1E-9
+Cell rise delay = 50% of output - 50% of input = (0.005324)*1E-9<br>
 ![image79ell](https://github.com/vamsi-2312/pes_pd/assets/142248038/97bf1eee-0f95-46a0-b231-ad9f76d159af)
 
-Cell fall delay = 50% of output - 50% of input = (0.07542)*1E-9
+Cell fall delay = 50% of output - 50% of input = (0.07542)*1E-9<br>
 
-Later, we are going to use layout and create LEF file.
+Later, we are going to use layout and create LEF file.<br>
 
-**Magic DRC**
-we can refer to this webpage opencircuitdesign.com/magic/
-CIF Ouput Section
+**Magic DRC**<br>
+we can refer to this webpage opencircuitdesign.com/magic/<br>
+CIF Ouput Section<br>
 ![image80dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/f685e304-74cb-41a8-907e-ffde8886cc6b)
 
 ![image80idell](https://github.com/vamsi-2312/pes_pd/assets/142248038/3b77c0a2-3d09-4206-96fb-a401a86f5ab9)
 
-DRC Section
+DRC Section<br>
 ![image81dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/cba3aed0-b76e-4610-878a-7c026be4d779)
 
 
-Basic DRC rules are Edge based rules.
-There are rules that are not edge based such as area,etc.
+Basic DRC rules are Edge based rules.<br>
+There are rules that are not edge based such as area,etc.<br>
 
-We are using Google's Skywater 130nm technology.
-https://www.skywatertechnology.com/technology-and-design-enablement/
+We are using Google's Skywater 130nm technology.<br>
+https://www.skywatertechnology.com/technology-and-design-enablement/<br>
 Documentation in github.<br>
-https://github.com/google/skywater-pdk
+https://github.com/google/skywater-pdk<br>
 
-To downoad the examples and .tech file
-search this is google, it will download automatically
+To downoad the examples and .tech file<br>
+search this is google, it will download automatically<br>
 ```
 opencircuitdesign.com/open_pdks/archive/drc_tests.tdz
 ```
 
-in terminal, to launch magic
+in terminal, to launch magic<br>
 ```
 magic
 ```
-Open met3.mag file
-we can move to console from layout window by pressing colon.
-to find out what the drc error is, in console type
+Open met3.mag file<br>
+we can move to console from layout window by pressing colon.<br>
+to find out what the drc error is, in console type<br>
 ```
 drc why
 ```
@@ -1016,15 +1018,15 @@ drc why
 ![image83dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/6c4fb692-06e5-4ff5-88f7-9a0f0e806439)
 
 
-select an area, to see the contacts
+select an area, to see the contacts<br>
 ```
 cif see VIA2
 ```
 ![image84](https://github.com/vamsi-2312/pes_pd/assets/142248038/5eedad68-793b-4169-940c-6c32a5996732)
 
-to see the dimensions of any area, select it.
-then type `box` in console.
-to perform drc
+to see the dimensions of any area, select it.<br>
+then type `box` in console.<br>
+to perform drc<br>
 ```
 drc check
 ``` 
@@ -1034,14 +1036,14 @@ drc check
 
 ![image87dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/c891b0f0-e67d-4ce5-9eae-e8aed65d0a27)
 
-updating the new .tech file
+updating the new .tech file<br>
 ![image88dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/10d9c461-3318-43ae-b249-357608753fcb)
 
 ![image89dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/faa0c356-6396-4170-9dce-9dbd89e79222)
 
 ![image90dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/5528f20b-50c5-4bb4-8f83-14756edf0960)
 
-we can see that the resistor drc error are fixed.
+we can see that the resistor drc error are fixed.<br>
 
 ![image91dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/b234d39e-3277-4fd0-a049-4fb14a68b029)
 
