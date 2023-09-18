@@ -640,3 +640,330 @@ Transistion time = time(slew_high_fall_thr) - time(slew_low_fall_thr)<br>
 ![image75](https://github.com/vamsi-2312/pes_pd/assets/142248038/a86db6d8-45ba-430a-b2a8-3f9e21ca2372)
 
 </details>
+
+<details>
+<summary> Week 3 -> Day 3 </summary><br>
+
+## Labs for CMOS inverter ngspice simulations
+
+### IO Placer
+
+open terminal<br>
+start openlane<br>
+select the picorv32a
+```
+run_synthesis
+```
+```
+run_floorplan
+```
+then in new terminal<br>
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-09_08-49/results/floorplan
+```
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+<image1dell>
+we can observe that the input and output ports are placed uniformaly.<br>
+
+In the floorplan.tcl file<br>
+<image2dell>
+
+```
+set ::env(FP_IO_MODE) 2
+```
+```
+run_floorplan
+```
+<image3dell>
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+<image4dell>
+now we can see that the ports arent placed equidistantly.<br>
+
+### Spice deck creation for CMOS inverter
+
+**VTC - SPICE simulations**<br>
+
+First we need to create a spice deck.<br>
+Spice deck -Contains the connectivity information, inputs that has to be given to the simulation, tap points.<br>
+
+1. Component Connectivity
+2. Component values.
+(ideally pmos must be 2-3 times bigger than nmos)
+3. Identify nodes.
+4. Name nodes. 
+<image5>
+
+Lets start with writing the spice deck.<br>
+<image6>
+<image7>
+
+**Spice Waveforms**<br>
+<image8>
+<image9>
+<image10>
+
+**Switching Threshold Vm**<br>
+The shapes of the waveforms are same.<br>
+The characterisation of the cmos inverter is maintained same.<br>
+
+**Static Behavior Evaluation** : CMOS inverter Robustness<br>
+1. switching threshold(Vm) is the point at which the the device switches.<br>
+Vm is the point where Vin = Vout<br>
+<image11>
+<image12>
+<image13>
+<image14>
+<image15>
+
+**Git cloning vsdstdcelldesign**
+```
+
+git clone https://github.com/nickson-jose/vsdstdcelldesign.git
+```
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+```
+We can see that there a new folder being created in openlane file, and it is containing the inverter .mag file.<br>
+
+Before we open the .mag file we need to have the .tech file.<br>
+<image16dell>
+We need to copy this .tech file into vsdstadcelldesign folder.<br>
+```
+cp sky130A.tech /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign/
+```
+<image17dell>
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+```
+```
+magic -T sky130A.tech sky130_inv.mag &
+```
+<image18dell>
+
+## Inception of Layout CMOS fabrication process
+
+**Create Active Region**
+Lets begin with 16-mask CMOS process
+1. Selecting a Substrate.
+Ptype, high resistivity, doping level, orientation
+2. Creating an Active region for transistors.
+3. Formation of N and P well.
+4. Foormation of Gate terminals.
+
+Mask 1<br>
+<image19>
+<image20>
+<image21>
+<image22>
+<image23>
+<image24>
+Field Oxides is grown, This process is called "LOCOS" - Local Oxidation of Silicon.<br>
+<image25>
+<image26>
+
+**N well and P well formation**
+Desposite Photoresist and mask 2
+<image27>
+creating the P well
+<image28>
+Creating the N well
+<image29>
+Next we need to take into High Temperature furnace which will drive-in diffusion.
+<image30>
+And this process is call Twin tub Process.
+<image31>
+
+**Formation og Gate**
+Fabrication of the gate terminal is very important.<br>
+We try to maintain the doping voltage and oxide capaitance, as they control threshold voltage.
+
+<image32>
+<image33>
+the  the original oxide is etched/stripped using dilute hydrfluric(HF) solution
+<image34>
+Then we can re-grow the oxide layer which of high quality.
+Next, deposition of polysilicon layer using CVD(chemical vapor decomposition) method
+<image35>
+Then again photoresist, and mask 6 for gate terminals.
+<image36>
+Etch exposed area, then we get our terminals.
+<image37>
+
+**Lightly doped drain(LDD) formation**
+Why do we need this doping?
+* Hot electron effect - High nergy crrier break Si-Si bonds 3.2eV barrier between Si condution band ans SiO2 conduction band.
+* Short channel Effect - When we go for smaller length mos, then drain field penertrates channel.
+
+Create Mask 7, and create the nmos(doped with N-) in the p well.
+<image38>
+Similarly Mask8, and create the pmos(doped with P-) in the n well.
+<image39>
+Then deposite thich SiO2, after Plasma anisotropic etchiping.
+<image40>
+we get side wall spacers.
+
+**Source and Drain Formation**
+Apply Thin screen oxide is grown to aoid channeling during implantation.
+Then doping, in p well we get N+ doped region.
+<image41>
+Then doping, in n well we get P+ doped region.
+<image42>
+
+<image43>
+Then put them into high tempertaure furnace, which will push the inpurities inside, and the source and drain are formed.
+<image44>
+
+**Building the contacts and interconnects**
+
+First we need to remove the thhin oxide using HF solution.
+Then deposite titanium on wafer surface, using sputtering.
+<image45>
+<image46>
+Then heat the wafer.
+<image47>
+Low resistant TiSi2 is formed.
+There is another reaction happening, TiN is formed which is used for local communication.
+<image48>
+Then unwanted TiN layer is etched away using RCA cleaning.
+<image49>
+<image50>
+<image51>
+
+**Higher level Metal Formation**
+SiO2 is deposited on wafer
+<image52>
+Chemical Mechanical polishing
+<image53>
+Making Contacts
+<image54>
+<image55>
+Deposite Thin TiN and then lanket Tungsten layer.
+<image56>
+then CMP
+<image57>
+Deposite Al layer, then Mask 13
+<image58>
+then again to define the contact hole, mask 14
+<image59>
+mask 15
+<image60>
+Then the last level is to deposite dielectric Si3N4 to protect the chip
+<image61>
+finally
+<image62>
+
+**Lab introduction to sky130 basic layers layout ns LEF usinf inverter**
+
+<image63dell>
+red - polysilicon 
+green - n diffusion
+peach - p diffusion
+blue - metal
+<image64dell>
+<image65dell>
+drains connected to output y
+<image66dell>
+vdd connection
+<image67dell>
+gnd connection
+<image68dell>
+LEF is on the right it contains the meatal connection(pr boundaries and ports)
+<image69>
+
+**Lab steps to create std cell layout and extract spice netlist**
+For a detailed procedure, on how to crete a standard cell visit hhtps://github.com/nickson-jose/vsdstdcelldesign
+
+Extracting infromation into spice
+In magic terminal
+```
+extact all
+```
+<image70dell>
+<image71dell>
+
+<image72dell>
+
+## Sky130 Tech file Labs
+<image73dell>
+<image74dell>
+<image75dell>
+
+<image76dell>
+rise time = 80% of rise - 20% of rise = (2.8906 - 2.6491)*1E-9
+<image77dell>
+fall time = 20% of fall - 80% of fall = (0.02664)*1E-9
+<image78dell>
+Cell rise delay = 50% of output - 50% of input = (0.005324)*1E-9
+<image79dell>
+Cell fall delay = 50% of output - 50% of input = (0.07542)*1E-9
+
+Later, we are going to use layout and create LEF file.
+
+**Magic DRC**
+we can refer to this webpage opencircuitdesign.com/magic/
+CIF Ouput Section
+<image80dell>
+<image80idell>
+DRC Section
+<image81dell>
+
+Basic DRC rules are Edge based rules.
+There are rules that are not edge based such as area,etc.
+
+We are using Google's Skywater 130nm technology.
+https://www.skywatertechnology.com/technology-and-design-enablement/
+Documentation in github.<br>
+https://github.com/google/skywater-pdk
+
+To downoad the examples and .tech file
+search this is google, it will download automatically
+```
+opencircuitdesign.com/open_pdks/archive/drc_tests.tdz
+```
+
+in terminal, to launch magic
+```
+magic
+```
+Open met3.mag file
+we can move to console from layout window by pressing colon.
+to find out what the drc error is, in console type
+```
+drc why
+```
+<image82dell>
+<image83dell>
+
+select an area, to see the contacts
+```
+cif see VIA2
+```
+<image84>
+to see the dimensions of any area, select it.
+then type `box` in console.
+to perform drc
+```
+drc check
+``` 
+<image85dell>
+<image86dell>
+<image87dell>
+updating the new .tech file
+<image88dell>
+<image89dell>
+<image90dell>
+we can see that the resistor drc error are fixed.
+
+<image91dell>
+<image92dell>
+<image93dell>
+<image94dell>
+<image95dell>
+<image96dell>
+<image97dell>
+
+</details>
