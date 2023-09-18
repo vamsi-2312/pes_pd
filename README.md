@@ -1278,9 +1278,12 @@ in openlane
 ```
 run_cts
 ```
-<image34dell>
-<image35dell>
-<image36dell>
+![image34dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/1513f745-afde-4cd3-81ae-fe1567813e50)
+
+![image35dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/a686fe65-1015-4150-a5d0-470be87d38bc)
+
+![image36dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/b234de30-7f08-4f61-a1c6-73530d915097)
+
 
 ### Timing analysis with real clocks using openSTA
 
@@ -1329,25 +1332,29 @@ run_placement
 ```
 run_cts
 ```
-<image43dell>
-<image44dell>
+![image43dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/ab58943b-297d-4556-b7da-b6718c45de79)
+
+![image44dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/068b68ec-3d70-4f40-8831-ad438eb98cb7)
 
 ```
 openroad
 ```
-<image42dell>
+![image42ddell](https://github.com/vamsi-2312/pes_pd/assets/142248038/ac91c943-b5b1-4c6d-b70a-82ebf97908fd)
+
 
 reading the .lef file
 ```
 read_lef /openLANE_flow/designs/picorv32a/runs/16-09_17-39/tmp/merged.lef
 ```
-<image45dell>
+![image45dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/c0094f35-3aaa-46d0-be06-8c3d17086927)
+
 reading the .def file
 
 ```
 read_def /openLANE_flow/designs/picorv32a/runs/16-09_17-39/results/cts/picorv32a.cts.def
 ```
-<image46dell>
+![image46dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/d26d31a5-813a-4b58-bc49-24c00e731c7c)
+
 
 ```
 write_db pico_cts.db
@@ -1358,7 +1365,8 @@ read_db pico_cts.db
 ```
 read_verilog /openLANE_flow/designs/picorv32a/runs/16-09_17-39/results/synthesis/picorv32a.synthesis_cts.v
 ```
-<image47dell>
+![image47dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/cd93723a-9f63-4fb1-a0bf-82d2e387ba5f)
+
 
 ```
 read_liberty -max $::env(LIB_SLOWEST)
@@ -1366,12 +1374,14 @@ read_liberty -max $::env(LIB_SLOWEST)
 ```
 read_liberty -max $::env(LIB_FASTEST)
 ```
-<image48dell>
+![image48dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/05a43979-c3a6-4270-8d2f-9ac2b0ab9670)
+
 
 ```
 read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
 ```
-<image49dell>
+![image49dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/307d1d0f-8fba-4960-81f6-1e2748ce15e6)
+
 
 ```
 set_propagated_clock [all_clocks]
@@ -1380,9 +1390,11 @@ set_propagated_clock [all_clocks]
 report_checks -path_delay min_max -format full_clock_expanded -digits 4
 ```
 hold slack
-<image50adell>
+![image50a](https://github.com/vamsi-2312/pes_pd/assets/142248038/12fa82a3-a2f5-44bd-8869-67caa7f5848f)
+
 setup slack
-<image50dell>
-<image51del>
+![image50dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/03995ea9-5961-489c-bf27-650320ece4a1)
+
+![image51del](https://github.com/vamsi-2312/pes_pd/assets/142248038/614b0429-4888-4be9-822b-b0dda1489ab7)
 
 </details>
