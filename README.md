@@ -703,16 +703,21 @@ Spice deck -Contains the connectivity information, inputs that has to be given t
 (ideally pmos must be 2-3 times bigger than nmos)
 3. Identify nodes.
 4. Name nodes. 
-<image5>
+![image5](https://github.com/vamsi-2312/pes_pd/assets/142248038/1dca6d63-81ba-4a4a-bb8b-0e393ea9fc50)
+
 
 Lets start with writing the spice deck.<br>
-<image6>
-<image7>
+![image6](https://github.com/vamsi-2312/pes_pd/assets/142248038/c8c9d22c-facf-4dfc-ba21-9c9257ccf96c)
+
+![image7](https://github.com/vamsi-2312/pes_pd/assets/142248038/ed7ed5c7-2587-4e98-9c35-3a1ccb859762)
 
 **Spice Waveforms**<br>
-<image8>
-<image9>
-<image10>
+![image8](https://github.com/vamsi-2312/pes_pd/assets/142248038/7315295a-1612-4706-8b9e-4119b612a767)
+
+![image9](https://github.com/vamsi-2312/pes_pd/assets/142248038/52fd81c3-0c37-40f3-9cd2-5d62a5a60a76)
+
+![image10](https://github.com/vamsi-2312/pes_pd/assets/142248038/df54e6f5-2222-41d0-85ce-953396cb99b3)
+
 
 **Switching Threshold Vm**<br>
 The shapes of the waveforms are same.<br>
@@ -721,11 +726,15 @@ The characterisation of the cmos inverter is maintained same.<br>
 **Static Behavior Evaluation** : CMOS inverter Robustness<br>
 1. switching threshold(Vm) is the point at which the the device switches.<br>
 Vm is the point where Vin = Vout<br>
-<image11>
-<image12>
-<image13>
-<image14>
-<image15>
+![image11](https://github.com/vamsi-2312/pes_pd/assets/142248038/4b464048-14ac-475f-9db7-15196b3b4044)
+
+![image12](https://github.com/vamsi-2312/pes_pd/assets/142248038/d55a30b9-6b9b-4b59-8def-e9a768e64766)
+
+![image13](https://github.com/vamsi-2312/pes_pd/assets/142248038/c2f5fe22-8903-41c0-a3ac-158d5452669c)
+
+![image14](https://github.com/vamsi-2312/pes_pd/assets/142248038/7128899f-a7ec-42f3-888e-66cb87ee95f7)
+
+![image15](https://github.com/vamsi-2312/pes_pd/assets/142248038/f1cb8761-3f42-4a93-90f6-173ca87b923a)
 
 **Git cloning vsdstdcelldesign**
 ```
