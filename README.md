@@ -747,19 +747,21 @@ cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 We can see that there a new folder being created in openlane file, and it is containing the inverter .mag file.<br>
 
 Before we open the .mag file we need to have the .tech file.<br>
-<image16dell>
+![image16dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/3926094b-dcb8-4f8b-9c4a-90403437a6e6)
+
 We need to copy this .tech file into vsdstadcelldesign folder.<br>
 ```
 cp sky130A.tech /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign/
 ```
-<image17dell>
+![image17dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/7f937a5f-dafd-4db2-9df9-619aa9823d3c)
+
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 ```
 ```
 magic -T sky130A.tech sky130_inv.mag &
 ```
-<image18dell>
+![image18dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/2d60a5a3-9558-4a9b-a45f-714956558b58)
 
 ## Inception of Layout CMOS fabrication process
 
