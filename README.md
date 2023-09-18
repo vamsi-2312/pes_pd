@@ -1243,13 +1243,17 @@ create two file one is pre_sra.conf and my_base.sdc
 save the first file in this loaction ~/Desktop/work/tools/openlane_working_dir/openlane
 the second file in this location ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
 
-<image26dell>
-<image27dell>
+![image26dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/f0cc22ed-b290-4c88-ae0f-ec214f60a782)
+
+![image27dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/bfb5355e-7e66-418d-bfe0-03d9f92cfcc4)
+
 After setting env(SYNTH_MAX_FANOUT) = 4
-<image28dell>
+![image28dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/0b32c9e9-1209-46a4-a6de-66b3e9e3da7e)
+
 the violation is reduced
 By upsizing the slack is reduced.
-<image29dell>
+![image29dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/effb2f72-e501-4544-b722-138c091c216a)
+
 
 ### Clock tree synthesis TritonCTS and signal integrity
 We should ideally get skew = 0
