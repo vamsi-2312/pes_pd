@@ -1221,18 +1221,23 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 ### Timing analysis with ideal clocks using openSTA
 
-<image19>
-<image20>
-<image21>
+![image19](https://github.com/vamsi-2312/pes_pd/assets/142248038/ef1d1541-0bb4-447c-9b70-379f73bb2552)
+
+![image20](https://github.com/vamsi-2312/pes_pd/assets/142248038/fdc7afa9-f83c-4a1b-8116-839628c3f524)
+
+![image21](https://github.com/vamsi-2312/pes_pd/assets/142248038/3d139c40-d1b6-4683-aaae-e945ef9e7035)
+
 Setup time: Minimum time data must be stable before the clock edge to guarantee correct flip-flop operation.
 
 Hold time: Minimum time data must remain stable after the clock edge to ensure reliable flip-flop operation.
 jitter - in yellow
-<image22>
-<image23>
+![image22](https://github.com/vamsi-2312/pes_pd/assets/142248038/5bcb9f02-abd9-4b0d-9b56-41a491560f44)
 
-<image24>
-<image25>
+![image23](https://github.com/vamsi-2312/pes_pd/assets/142248038/f08f4ad2-cef1-46ba-aa9f-7062a43c6949)
+
+![image24](https://github.com/vamsi-2312/pes_pd/assets/142248038/edfbe86b-dd14-4d2a-ac89-11909fb88e31)
+
+![image25](https://github.com/vamsi-2312/pes_pd/assets/142248038/f6cef1ff-d725-4e0b-9fab-186426ea5524)
 
 create two file one is pre_sra.conf and my_base.sdc
 save the first file in this loaction ~/Desktop/work/tools/openlane_working_dir/openlane
