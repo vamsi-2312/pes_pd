@@ -703,6 +703,7 @@ Spice deck -Contains the connectivity information, inputs that has to be given t
 (ideally pmos must be 2-3 times bigger than nmos)
 3. Identify nodes.
 4. Name nodes. 
+
 ![image5](https://github.com/vamsi-2312/pes_pd/assets/142248038/1dca6d63-81ba-4a4a-bb8b-0e393ea9fc50)
 
 
@@ -1056,6 +1057,6 @@ we can see that the resistor drc error are fixed.<br>
 ![image95dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/bcb28412-16d3-42e5-875d-aeee9caacda4)
 
 ![image96dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/147fba26-8d98-406a-8eb7-0d4d0f294598)
-
+the drc has been resolved after putting anthor layer
 
 </details>
