@@ -1,0 +1,73 @@
+OpenROAD 0.9.0 1415572a73
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Warning: /openLANE_flow/designs/picorv32a/runs/16-09_17-39/tmp/resizer.lib line 32, default_operating_condition ss_100C_1v60 not found.
+Notice 0: Reading LEF file:  /openLANE_flow/designs/picorv32a/runs/16-09_17-39/tmp/merged_unpadded.lef
+Notice 0:     Created 13 technology layers
+Notice 0:     Created 25 technology vias
+Notice 0:     Created 442 library cells
+Notice 0: Finished LEF file:  /openLANE_flow/designs/picorv32a/runs/16-09_17-39/tmp/merged_unpadded.lef
+Notice 0: 
+Reading DEF file: /openLANE_flow/designs/picorv32a/runs/16-09_17-39/tmp/placement/4-replace.def
+Notice 0: Design: picorv32a
+Notice 0:     Created 409 pins.
+Notice 0:     Created 14876 components and 112489 component-terminals.
+Notice 0:     Created 14978 nets and 56051 connections.
+Notice 0: Finished DEF file: /openLANE_flow/designs/picorv32a/runs/16-09_17-39/tmp/placement/4-replace.def
+create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+set input_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+set output_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+puts "\[INFO\]: Setting output delay to: $output_delay_value"
+[INFO]: Setting output delay to: 4.946000000000001
+puts "\[INFO\]: Setting input delay to: $input_delay_value"
+[INFO]: Setting input delay to: 4.946000000000001
+set_max_fanout $::env(SYNTH_MAX_FANOUT) [current_design]
+set clk_indx [lsearch [all_inputs] [get_port $::env(CLOCK_PORT)]]
+#set rst_indx [lsearch [all_inputs] [get_port resetn]]
+set all_inputs_wo_clk [lreplace [all_inputs] $clk_indx $clk_indx]
+#set all_inputs_wo_clk_rst [lreplace $all_inputs_wo_clk $rst_indx $rst_indx]
+set all_inputs_wo_clk_rst $all_inputs_wo_clk
+# correct resetn
+set_input_delay $input_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] $all_inputs_wo_clk_rst
+#set_input_delay 0.0 -clock [get_clocks $::env(CLOCK_PORT)] {resetn}
+set_output_delay $output_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] [all_outputs]
+# TODO set this as parameter
+set_driving_cell -lib_cell $::env(SYNTH_DRIVING_CELL) -pin $::env(SYNTH_DRIVING_CELL_PIN) [all_inputs]
+set cap_load [expr $::env(SYNTH_CAP_LOAD) / 1000.0]
+puts "\[INFO\]: Setting load to: $cap_load"
+[INFO]: Setting load to: 0.01765
+set_load  $cap_load [all_outputs]
+[INFO RSZ-0027] Inserted 101 input buffers.
+[INFO RSZ-0028] Inserted 307 output buffers.
+[INFO RSZ-0034] Found 27 slew violations.
+[INFO RSZ-0036] Found 27 capacitance violations.
+[INFO RSZ-0038] Inserted 55 buffers in 27 nets.
+[INFO RSZ-0039] Resized 11009 instances.
+[WARNING DPL-0011] Could not find power special net.
+Design Stats
+--------------------------------
+total instances         15339
+multi row instances         0
+fixed instances             0
+nets                    15441
+design area          420473.3 u^2
+fixed area                0.0 u^2
+movable area         145176.7 u^2
+utilization                35 %
+utilization padded         53 %
+rows                      238
+row height                2.7 u
+
+Placement Analysis
+--------------------------------
+total displacement    80422.3 u
+average displacement      5.2 u
+max displacement        194.8 u
+original HPWL        638882.7 u
+legalized HPWL       655965.0 u
+delta HPWL                  3 %
+
+[INFO DPL-0020] Mirrored 5903 instances
+[INFO DPL-0021] HPWL before          655965.0 u
+[INFO DPL-0022] HPWL after           644082.5 u
+[INFO DPL-0023] HPWL delta               -1.8 %
