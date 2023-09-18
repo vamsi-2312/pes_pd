@@ -1057,6 +1057,16 @@ we can see that the resistor drc error are fixed.<br>
 ![image95dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/bcb28412-16d3-42e5-875d-aeee9caacda4)
 
 ![image96dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/147fba26-8d98-406a-8eb7-0d4d0f294598)
-the drc has been resolved after putting anthor layer
+the drc has been resolved after putting anthor layer<br>
+
+![image97dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/97003267-9e06-43e6-886b-c100f3483f30)
+
+</details>
+
+<details>
+<summary> Week 3 -> Day 4 </summary><br>
+
+![image17dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/545f2860-68c3-4455-96f6-fd7caaa25ee7)
+
 
 </details>
