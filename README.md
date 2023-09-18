@@ -1087,39 +1087,39 @@ less tracks.info
 
 in our layout<br>
 press g<br>
-we can see a grid
+we can see a grid<br>
 ![image2dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/760b59ce-33f0-4724-b51a-353859398286)
 
-after making our grid
-by executing the below command in magic console
+after making our grid<br>
+by executing the below command in magic console<br>
   
 ```
 grid 0.46um 0.34um 0.23um 0.17um
 ```
 ![image3dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/0c6e512f-ed2d-4784-bd54-024023c34868)
 
-the width of the standard cell must be in odd multiples of x pitch.
+the width of the standard cell must be in odd multiples of x pitch.<br>
 ![image4dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/53f8f8fa-0ce0-410d-8921-b5f77a4c4f72)
 
-we can there are 2 full boxes and 2 half boxes being used for the ports.
+we can there are 2 full boxes and 2 half boxes being used for the ports.<br>
 
-same way we need for height also.
+same way we need for height also.<br>
 ![image5dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/4cf46473-1500-4030-9789-7f91ef3094d0)
 
-1 and half boxes being used.
+1 and half boxes being used.<br>
 
-how to name any port.
+how to name any port.<br>
 ![image6dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/980cf1a3-dbe2-4a49-8ce9-06e99148070b)
 
 ![image7dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/6c6c1caa-63f2-4fbe-bb9c-8f8e2ac97d62)
 
-save the file as sky130_vsdinv.mag
+save the file as sky130_vsdinv.mag<br>
 
 ```
 save sky130_vsdinv.mag
 ```
 
-to make lef file
+to make lef file<br>
 ```
 lef write
 ```
@@ -1127,10 +1127,10 @@ lef write
 
 ![image9dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/469e2ea5-4c31-496a-9454-571d1b6e3a90)
 
-now we have our lef file ready
-we need to put it into picorv32a
+now we have our lef file ready<br>
+we need to put it into picorv32a<br>
 
-next copying our lef file into this destination ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+next copying our lef file into this destination ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src<br>
 
 ![image10dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/2aaa6019-d55a-41f8-b828-72e90737d42c)
 
@@ -1161,39 +1161,39 @@ add_lefs -src $lefs
 ```
 run_synthesis
 ```
-It is getting violated.
+It is getting violated.<br>
 
 **Introdunction to delay tables**<br>
-for and gate, enable pin is 1
-for or gate, enable pin is 0
+for and gate, enable pin is 1<br>
+for or gate, enable pin is 0<br>
 ![image4](https://github.com/vamsi-2312/pes_pd/assets/142248038/6e12e75a-013f-4019-a0e9-d9094181233f)
 
-spliting the load into 2 buffers and then 1 buffer
+spliting the load into 2 buffers and then 1 buffer<br>
 ![image5](https://github.com/vamsi-2312/pes_pd/assets/142248038/d0712464-8039-41d7-9b20-15c65181f217)
 
-assumption
+assumption<br>
 ![image6](https://github.com/vamsi-2312/pes_pd/assets/142248038/3296a4d0-4654-4ca2-9ac7-937e275c7d03)
 
-observation
+observation<br>
 ![image7](https://github.com/vamsi-2312/pes_pd/assets/142248038/914eb61f-1854-4e8e-9b6c-8370ec72d87c)
 
-the capcitance load at output node of each buffer is varying.
-Delay tables - representation of delays
+the capcitance load at output node of each buffer is varying.<br>
+Delay tables - representation of delays<br>
 ![image8](https://github.com/vamsi-2312/pes_pd/assets/142248038/48992324-85f3-457e-b55c-9b710ca20c17)
 
 ![image9](https://github.com/vamsi-2312/pes_pd/assets/142248038/e16b3931-19f5-4842-ba75-cd325750f727)
 
-if next input capcitance is in between a range then we need extrpolate.
+if next input capcitance is in between a range then we need extrpolate.<br>
 ![image10](https://github.com/vamsi-2312/pes_pd/assets/142248038/ddbad1d0-ca77-40a1-953a-e7d1f3c69aca)
 
-the delay for flip flop would be x9' + y15
+the delay for flip flop would be x9' + y15<br>
 ![image11](https://github.com/vamsi-2312/pes_pd/assets/142248038/a0644b09-fdf4-413a-9f30-95f908e85eb5)
 
-skew = 0
-if there was different delays then skew would have some value
-Skew is the time delta between the actual and expected arrival time of a clock signal
+skew = 0<br>
+if there was different delays then skew would have some value<br>
+Skew is the time delta between the actual and expected arrival time of a clock signal<br>
 
-coming back to solve our issue in violation of run_synthesis
+coming back to solve our issue in violation of run_synthesis<br>
 ![image13dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/3cacb300-9139-4fbd-bb98-df5fdda7f226)
 
 ![image14dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/e26ebc3b-6b6c-4c55-a2d5-7a5a5b18d1d8)
@@ -1216,7 +1216,7 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 ![image17dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/8d0a58fc-bfc1-4763-bdc4-1891c04cba50)
 
-**sky130_vsdinv _14086_**
+**sky130_vsdinv _14086_** <br>
 ![image18dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/fea4dfc8-a664-4145-857a-0c8a59b44aa8)
 
 ### Timing analysis with ideal clocks using openSTA
@@ -1227,10 +1227,10 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 ![image21](https://github.com/vamsi-2312/pes_pd/assets/142248038/3d139c40-d1b6-4683-aaae-e945ef9e7035)
 
-Setup time: Minimum time data must be stable before the clock edge to guarantee correct flip-flop operation.
+Setup time: Minimum time data must be stable before the clock edge to guarantee correct flip-flop operation.<br>
 
-Hold time: Minimum time data must remain stable after the clock edge to ensure reliable flip-flop operation.
-jitter - in yellow
+Hold time: Minimum time data must remain stable after the clock edge to ensure reliable flip-flop operation.<br>
+jitter - in yellow<br>
 ![image22](https://github.com/vamsi-2312/pes_pd/assets/142248038/5bcb9f02-abd9-4b0d-9b56-41a491560f44)
 
 ![image23](https://github.com/vamsi-2312/pes_pd/assets/142248038/f08f4ad2-cef1-46ba-aa9f-7062a43c6949)
@@ -1239,42 +1239,42 @@ jitter - in yellow
 
 ![image25](https://github.com/vamsi-2312/pes_pd/assets/142248038/f6cef1ff-d725-4e0b-9fab-186426ea5524)
 
-create two file one is pre_sra.conf and my_base.sdc
-save the first file in this loaction ~/Desktop/work/tools/openlane_working_dir/openlane
-the second file in this location ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+create two file one is pre_sra.conf and my_base.sdc<br>
+save the first file in this loaction ~/Desktop/work/tools/openlane_working_dir/openlane<br>
+the second file in this location ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src<br>
 
 ![image26dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/f0cc22ed-b290-4c88-ae0f-ec214f60a782)
 
 ![image27dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/bfb5355e-7e66-418d-bfe0-03d9f92cfcc4)
 
-After setting env(SYNTH_MAX_FANOUT) = 4
+After setting env(SYNTH_MAX_FANOUT) = 4<br>
 ![image28dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/0b32c9e9-1209-46a4-a6de-66b3e9e3da7e)
 
-the violation is reduced
-By upsizing the slack is reduced.
+the violation is reduced<br>
+By upsizing the slack is reduced.<br>
 ![image29dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/effb2f72-e501-4544-b722-138c091c216a)
 
 
 ### Clock tree synthesis TritonCTS and signal integrity
-We should ideally get skew = 0
+We should ideally get skew = 0<br>
 ![image30](https://github.com/vamsi-2312/pes_pd/assets/142248038/7f8a85e5-e5da-4a97-ab25-abc3ed7b4196)
 
-Clock tree synthesis (CTS) is a crucial step in digital integrated circuit design. It optimizes clock distribution, minimizing skew and jitter, ensuring synchronous operation, and enhancing overall chip performance, critical for modern high-speed electronics.
+Clock tree synthesis (CTS) is a crucial step in digital integrated circuit design. It optimizes clock distribution, minimizing skew and jitter, ensuring synchronous operation, and enhancing overall chip performance, critical for modern high-speed electronics.<br>
 
-We are installing buffer, so that the signal is sent properly.
+We are installing buffer, so that the signal is sent properly.<br>
 ![image31](https://github.com/vamsi-2312/pes_pd/assets/142248038/ebadb3fe-75dc-4ea4-bdbc-1752d758e318)
 
 
-Clock net shielding employs techniques like differential signaling, ground planes, and shielding layers to minimize electromagnetic interference and crosstalk in high-frequency clock signals. This enhances signal integrity and reduces the risk of timing errors in complex electronic systems.
+Clock net shielding employs techniques like differential signaling, ground planes, and shielding layers to minimize electromagnetic interference and crosstalk in high-frequency clock signals. This enhances signal integrity and reduces the risk of timing errors in complex electronic systems.<br>
 ![image32](https://github.com/vamsi-2312/pes_pd/assets/142248038/0f81333b-80fd-4320-bbb3-db7ff7122ea8)
 
 
-Crosstalk-induced delta delay or skew can disrupt signal timing in digital circuits, causing errors and reducing performance. It results from unwanted coupling between adjacent signals, introducing unpredictable delays that can lead to data corruption and functional failures, necessitating careful signal integrity analysis and mitigation techniques.
+Crosstalk-induced delta delay or skew can disrupt signal timing in digital circuits, causing errors and reducing performance. It results from unwanted coupling between adjacent signals, introducing unpredictable delays that can lead to data corruption and functional failures, necessitating careful signal integrity analysis and mitigation techniques.<br>
 ![image33](https://github.com/vamsi-2312/pes_pd/assets/142248038/17246558-85b0-4713-8384-dcc4328169e4)
 
 
-to run CTS
-in openlane
+to run CTS<br>
+in openlane<br>
 ```
 run_cts
 ```
@@ -1287,22 +1287,22 @@ run_cts
 
 ### Timing analysis with real clocks using openSTA
 
-Refer Hold time and Setup time definition above.
+Refer Hold time and Setup time definition above.<br>
 
-Doing Timing analysis with real clocks
+Doing Timing analysis with real clocks<br>
 ![image37](https://github.com/vamsi-2312/pes_pd/assets/142248038/85cd6adf-06f8-4ed6-bea6-4ac7814c76a2)
 
 ![image38](https://github.com/vamsi-2312/pes_pd/assets/142248038/1349a260-2815-4e88-8ea9-aa43e83cb1f1)
 
-setup time slack
+setup time slack<br>
 ![image39](https://github.com/vamsi-2312/pes_pd/assets/142248038/1042ca7e-f9e2-4b2f-b78b-091a382055e4)
 
-hold time slack
+hold time slack<br>
 ![image40](https://github.com/vamsi-2312/pes_pd/assets/142248038/8b8f308c-a080-4bad-bed8-dbb104b67163)
 
 ![image41](https://github.com/vamsi-2312/pes_pd/assets/142248038/21cccdb8-3880-4e3f-b052-469283375ff4)
 
-start openlane
+start openlane<br>
 ```
 docker
 ```
@@ -1342,13 +1342,13 @@ openroad
 ![image42ddell](https://github.com/vamsi-2312/pes_pd/assets/142248038/ac91c943-b5b1-4c6d-b70a-82ebf97908fd)
 
 
-reading the .lef file
+reading the .lef file<br>
 ```
 read_lef /openLANE_flow/designs/picorv32a/runs/16-09_17-39/tmp/merged.lef
 ```
 ![image45dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/c0094f35-3aaa-46d0-be06-8c3d17086927)
 
-reading the .def file
+reading the .def file<br>
 
 ```
 read_def /openLANE_flow/designs/picorv32a/runs/16-09_17-39/results/cts/picorv32a.cts.def
@@ -1389,10 +1389,10 @@ set_propagated_clock [all_clocks]
 ```
 report_checks -path_delay min_max -format full_clock_expanded -digits 4
 ```
-hold slack
+hold slack<br>
 ![image50a](https://github.com/vamsi-2312/pes_pd/assets/142248038/12fa82a3-a2f5-44bd-8869-67caa7f5848f)
 
-setup slack
+setup slack<br>
 ![image50dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/03995ea9-5961-489c-bf27-650320ece4a1)
 
 ![image51del](https://github.com/vamsi-2312/pes_pd/assets/142248038/614b0429-4888-4be9-822b-b0dda1489ab7)
