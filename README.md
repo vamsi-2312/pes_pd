@@ -774,43 +774,59 @@ Ptype, high resistivity, doping level, orientation
 4. Foormation of Gate terminals.
 
 Mask 1<br>
-<image19>
-<image20>
-<image21>
-<image22>
-<image23>
-<image24>
+![image19](https://github.com/vamsi-2312/pes_pd/assets/142248038/405f6ea1-a083-4725-b95e-1a5134dd08b3)
+
+![image20](https://github.com/vamsi-2312/pes_pd/assets/142248038/c05faab0-ef3b-438e-a34d-f35062b39a4c)
+
+![image21](https://github.com/vamsi-2312/pes_pd/assets/142248038/524be500-39da-4b30-a455-45c2cd64bd5f)
+
+![image22](https://github.com/vamsi-2312/pes_pd/assets/142248038/0a29d004-2ee3-4f28-ba83-673b7a9e330b)
+
+![image23](https://github.com/vamsi-2312/pes_pd/assets/142248038/226fd508-0cfb-480e-987d-8ab9c0987970)
+
+![image24](https://github.com/vamsi-2312/pes_pd/assets/142248038/3066a48f-b32e-4f2d-b755-f6921bf75217)
+
 Field Oxides is grown, This process is called "LOCOS" - Local Oxidation of Silicon.<br>
-<image25>
-<image26>
+![image25](https://github.com/vamsi-2312/pes_pd/assets/142248038/c509c8b4-edc8-4c8b-a782-8a81ede73ae9)
+
+![image26](https://github.com/vamsi-2312/pes_pd/assets/142248038/aaeafe64-58aa-416b-af72-7001a0f7bf8d)
 
 **N well and P well formation**
 Desposite Photoresist and mask 2
-<image27>
+![image27](https://github.com/vamsi-2312/pes_pd/assets/142248038/a38ec257-2a08-4522-bbbb-97000a7f1c3f)
+
 creating the P well
-<image28>
+![image28](https://github.com/vamsi-2312/pes_pd/assets/142248038/b97526a8-9aec-4a56-91e3-9deaac90efce)
+
 Creating the N well
-<image29>
+![image29](https://github.com/vamsi-2312/pes_pd/assets/142248038/81668252-d3b0-480e-a78a-0c8f6e956e12)
+
 Next we need to take into High Temperature furnace which will drive-in diffusion.
-<image30>
+![image30](https://github.com/vamsi-2312/pes_pd/assets/142248038/8894b190-b312-4688-9639-0369fc6eff10)
+
 And this process is call Twin tub Process.
-<image31>
+![image31](https://github.com/vamsi-2312/pes_pd/assets/142248038/dd0260c0-933b-4324-86ee-e3d6371fda51)
 
 **Formation og Gate**
 Fabrication of the gate terminal is very important.<br>
 We try to maintain the doping voltage and oxide capaitance, as they control threshold voltage.
 
-<image32>
-<image33>
+![image32](https://github.com/vamsi-2312/pes_pd/assets/142248038/f8e466dd-4b13-4625-a795-0533ffe07283)
+
+![image33](https://github.com/vamsi-2312/pes_pd/assets/142248038/70985f31-a870-4952-8d02-7c174812771f)
+
 the  the original oxide is etched/stripped using dilute hydrfluric(HF) solution
-<image34>
+![image34](https://github.com/vamsi-2312/pes_pd/assets/142248038/edd22340-19ae-4f5e-b274-a8f8c1f14bca)
+
 Then we can re-grow the oxide layer which of high quality.
 Next, deposition of polysilicon layer using CVD(chemical vapor decomposition) method
-<image35>
+![image35](https://github.com/vamsi-2312/pes_pd/assets/142248038/750e8c9c-332f-47a8-8b4b-2900eb66755f)
+
 Then again photoresist, and mask 6 for gate terminals.
-<image36>
+![image36](https://github.com/vamsi-2312/pes_pd/assets/142248038/ad032bc2-b743-4892-b6fa-574d1683549e)
+
 Etch exposed area, then we get our terminals.
-<image37>
+![image37](https://github.com/vamsi-2312/pes_pd/assets/142248038/9e3936ad-683b-4fad-89ba-195dd8a36da2)
 
 **Lightly doped drain(LDD) formation**
 Why do we need this doping?
@@ -818,62 +834,85 @@ Why do we need this doping?
 * Short channel Effect - When we go for smaller length mos, then drain field penertrates channel.
 
 Create Mask 7, and create the nmos(doped with N-) in the p well.
-<image38>
+![image38](https://github.com/vamsi-2312/pes_pd/assets/142248038/948aad83-7c07-4694-b3a9-416f294cb2cd)
+
 Similarly Mask8, and create the pmos(doped with P-) in the n well.
-<image39>
+![image39](https://github.com/vamsi-2312/pes_pd/assets/142248038/0ddd8aba-373e-47c8-b40a-ecb5360425df)
+
 Then deposite thich SiO2, after Plasma anisotropic etchiping.
-<image40>
+![image40](https://github.com/vamsi-2312/pes_pd/assets/142248038/189a32a6-d502-4801-8c8f-268753f9f273)
+
 we get side wall spacers.
 
 **Source and Drain Formation**
 Apply Thin screen oxide is grown to aoid channeling during implantation.
 Then doping, in p well we get N+ doped region.
-<image41>
-Then doping, in n well we get P+ doped region.
-<image42>
+![image41](https://github.com/vamsi-2312/pes_pd/assets/142248038/6a3d9520-6baf-4e3b-90ad-45ed8b7efedd)
 
-<image43>
+Then doping, in n well we get P+ doped region.
+![image42](https://github.com/vamsi-2312/pes_pd/assets/142248038/704800d4-7f70-4097-8c5c-4c471460d6af)
+
+
+![image43](https://github.com/vamsi-2312/pes_pd/assets/142248038/5c497f96-8a74-449c-9760-d0dfc2fa08ee)
+
 Then put them into high tempertaure furnace, which will push the inpurities inside, and the source and drain are formed.
-<image44>
+![image44](https://github.com/vamsi-2312/pes_pd/assets/142248038/03953ce5-04cc-4226-960a-cf55e7023c46)
 
 **Building the contacts and interconnects**
 
 First we need to remove the thhin oxide using HF solution.
 Then deposite titanium on wafer surface, using sputtering.
-<image45>
-<image46>
+![image45](https://github.com/vamsi-2312/pes_pd/assets/142248038/f3d3d7c0-0d4d-4e1b-a227-d8ba0091ed00)
+
+![image46](https://github.com/vamsi-2312/pes_pd/assets/142248038/5e7f7c2f-4ee9-4dc8-9ad3-d7eaf805922e)
+
 Then heat the wafer.
-<image47>
+![image47](https://github.com/vamsi-2312/pes_pd/assets/142248038/7b806772-75c1-4eec-8f8f-cb293398c5a4)
+
 Low resistant TiSi2 is formed.
 There is another reaction happening, TiN is formed which is used for local communication.
-<image48>
+![image48](https://github.com/vamsi-2312/pes_pd/assets/142248038/3b7bdf7c-b189-4959-b82d-f6a0328ab280)
+
 Then unwanted TiN layer is etched away using RCA cleaning.
-<image49>
-<image50>
-<image51>
+![image49](https://github.com/vamsi-2312/pes_pd/assets/142248038/201d6bff-01dd-409a-8d63-22a5145fea61)
+
+![image50](https://github.com/vamsi-2312/pes_pd/assets/142248038/68a5beb1-4e36-4054-a108-6626db64b2d3)
+
+![image51](https://github.com/vamsi-2312/pes_pd/assets/142248038/4cf17a1b-869a-46e1-b33d-49eeae9c0fa1)
 
 **Higher level Metal Formation**
 SiO2 is deposited on wafer
-<image52>
+![image52](https://github.com/vamsi-2312/pes_pd/assets/142248038/15c8d551-0c70-4d13-82a9-6ef3a27cf772)
+
 Chemical Mechanical polishing
-<image53>
+![image53](https://github.com/vamsi-2312/pes_pd/assets/142248038/61b7330b-e0a7-4c5e-b8ec-5acf83de03a7)
+
 Making Contacts
-<image54>
-<image55>
+![image54](https://github.com/vamsi-2312/pes_pd/assets/142248038/8e9587c0-b9bb-472d-8dbb-5a4552c2d0a5)
+
+![image55](https://github.com/vamsi-2312/pes_pd/assets/142248038/dfe5b777-e1cc-460d-a8d7-df1fbbb060e9)
+
 Deposite Thin TiN and then lanket Tungsten layer.
-<image56>
+![image56](https://github.com/vamsi-2312/pes_pd/assets/142248038/de45f354-d28c-44d0-a348-4856af606c3d)
+
 then CMP
-<image57>
+![image57](https://github.com/vamsi-2312/pes_pd/assets/142248038/de90d411-b7a8-4c2a-b466-8167a17b7152)
+
 Deposite Al layer, then Mask 13
-<image58>
+![image58](https://github.com/vamsi-2312/pes_pd/assets/142248038/b26b4dfe-5f6e-4440-a980-b219327ed655)
+
 then again to define the contact hole, mask 14
-<image59>
+![image59](https://github.com/vamsi-2312/pes_pd/assets/142248038/6137f22e-1808-40e6-b7bb-49f4278a9bd0)
+
 mask 15
-<image60>
+![image60](https://github.com/vamsi-2312/pes_pd/assets/142248038/b428e158-d983-429a-afe4-494c963bb094)
+
 Then the last level is to deposite dielectric Si3N4 to protect the chip
-<image61>
+![image61](https://github.com/vamsi-2312/pes_pd/assets/142248038/32f7767a-aa34-4e6c-a250-94add80a15a0)
+
 finally
-<image62>
+![image62](https://github.com/vamsi-2312/pes_pd/assets/142248038/eaf2ce6b-b301-43ea-9ca0-d2f057d1b1a8)
+
 
 **Lab introduction to sky130 basic layers layout ns LEF usinf inverter**
 
@@ -891,7 +930,8 @@ vdd connection
 gnd connection
 <image68dell>
 LEF is on the right it contains the meatal connection(pr boundaries and ports)
-<image69>
+![image69](https://github.com/vamsi-2312/pes_pd/assets/142248038/c924e728-4563-4e81-9568-f8ff91f5e075)
+
 
 **Lab steps to create std cell layout and extract spice netlist**
 For a detailed procedure, on how to crete a standard cell visit hhtps://github.com/nickson-jose/vsdstdcelldesign
@@ -961,7 +1001,8 @@ select an area, to see the contacts
 ```
 cif see VIA2
 ```
-<image84>
+![image84](https://github.com/vamsi-2312/pes_pd/assets/142248038/5eedad68-793b-4169-940c-6c32a5996732)
+
 to see the dimensions of any area, select it.
 then type `box` in console.
 to perform drc
