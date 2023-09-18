@@ -1398,3 +1398,14 @@ setup slack<br>
 ![image51del](https://github.com/vamsi-2312/pes_pd/assets/142248038/614b0429-4888-4be9-822b-b0dda1489ab7)
 
 </details>
+
+<details>
+<summary> Week 3 -> Day 5 </summary><br>
+
+## Contents of Day 5
++ Routing and Design rule check(DRC)
++ Power Distribution Network and routing.
++ TritonRoute Features.
+
+
+</details>
