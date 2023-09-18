@@ -1083,31 +1083,36 @@ cd ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky
 ```
 less tracks.info
 ```
-<image1dell>
-in our layout
-press g
+![image1dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/778f505f-1a09-4708-a655-b0819ee63a47)
+
+in our layout<br>
+press g<br>
 we can see a grid
-<image2dell>
+![image2dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/760b59ce-33f0-4724-b51a-353859398286)
+
 after making our grid
 by executing the below command in magic console
   
 ```
 grid 0.46um 0.34um 0.23um 0.17um
 ```
-<image3dell>
+![image3dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/0c6e512f-ed2d-4784-bd54-024023c34868)
 
 the width of the standard cell must be in odd multiples of x pitch.
-<image4dell>
+![image4dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/53f8f8fa-0ce0-410d-8921-b5f77a4c4f72)
+
 we can there are 2 full boxes and 2 half boxes being used for the ports.
 
 same way we need for height also.
-<image5dell>
+![image5dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/4cf46473-1500-4030-9789-7f91ef3094d0)
+
 1 and half boxes being used.
 
 how to name any port.
-<image6dell>
+![image6dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/980cf1a3-dbe2-4a49-8ce9-06e99148070b)
 
-<image7dell>
+![image7dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/6c6c1caa-63f2-4fbe-bb9c-8f8e2ac97d62)
+
 save the file as sky130_vsdinv.mag
 
 ```
@@ -1118,16 +1123,20 @@ to make lef file
 ```
 lef write
 ```
-<image8dell>
-<image9dell>
+![image8dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/2b4868c2-a14f-45c1-b6ab-82b5f25c04de)
+
+![image9dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/469e2ea5-4c31-496a-9454-571d1b6e3a90)
+
 now we have our lef file ready
 we need to put it into picorv32a
 
 next copying our lef file into this destination ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
 
-<image10dell>
-<image11dell>
-<image12dell>
+![image10dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/2aaa6019-d55a-41f8-b828-72e90737d42c)
+
+![image11dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/ae18a42b-93c5-45ed-ac0a-c55d3e7ab2e0)
+
+![image12dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/50f34329-5c92-482d-8ea7-ab1939704854)
 
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane
