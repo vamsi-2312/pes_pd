@@ -1408,4 +1408,110 @@ setup slack<br>
 + TritonRoute Features.
 
 
+## Introduction to Maze Routing and Design Rule Check
+**Maze Routing**
+The algorithim find the best possible route from the source to target.(Maze Routing - Lee's Algorithim)
+<image1>
+creates a grid
+<image2>
+numbers the path
+<image3>
+fist path
+<image4>
+second path
+<image5>
+since the second path is having less turns, we choose that
+another example
+<image6>
+similarly for other paths also.
+<image7>
+
+**DRC**
+* Must maintain minimum wire width
+* Must maintain minimum length between 2 wires
+* Must maintain minimum wire pitch
+There are many more rules.
+<image8>
+solution, different layers
+<image9>
+* Via width
+*Via Spacing
+
+## Power Distribution Network and routing
+
+Routing step of the layout.
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
+```
+```
+docker
+```
+```
+./flow.tcl -interactive
+```
+```
+package require openlane 0.9
+```
+```
+prep -design picorv32a -tag 16-09_17-39
+```
+```
+echo $::env(CURRENT_DEF)
+```
+![image10dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/8fd62482-ec4d-4950-b10a-aab1d317eb58)
+
+```
+gen_pdn
+```
+![image12idell](https://github.com/vamsi-2312/pes_pd/assets/142248038/42705970-fba1-4741-8e76-929c93d5cad4)
+
+![image12dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/9193c4ef-b31c-404b-bfec-1cf38ccea5f7)
+
+<image13>
+green color reg - picorv32
+red - vdd
+blue - gnd
+
+![image14dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/b7d9f257-cecd-44bb-9f22-30bfdd6d445d)
+
+
+last step remaining is routing
+```
+run_routing
+```
+Global routing in chip design is the initial stage that establishes a high-level plan for connecting components on an integrated circuit. It addresses wirelength, congestion, and power considerations. 
+
+Detailed routing follows, refining connections, ensuring manufacturability, and completing the chip's interconnections. Both stages are crucial for chip functionality and performance.
+<image13>
+<image14>
+
+## Triton Route Features
+
+<image15>
+<image16>
+Routig Requirements forr Preprocessed Guides:
+* Should have unit width.
+* Should be on the preferred direction.
+<image17>
+<image18>
+TritonRoute
+* Inputs : .lef, .def, processed route guides
+* Outputs : Detailed routing solution with optimised ire length and via count.
+* Constraints : Route guides, connectivity constraints and design rules.
+<image19>
++ Access Point : on-grid point on the metl layer of the route guide, and is used to connect to lower layer, upper layer segments, pins and ports.
++ Access Point Cluster : A union of all APs derived from everything.
+
+<image20>
+Now we are going to extract the parasites.
+```
+cd ~/Desktop/work/tools/SPEF_Extractor/
+```
+We are using SPEF Extrctor :  SPEF Extractor is a software tool used to automatically generate Standard Parasitic Exchange Format (SPEF) files. These files represent parasitic electrical characteristics in integrated circuits, aiding accurate simulation and timing analysis during the design process.
+
+```
+python3 /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/routing/picorv32a.def
+```
+The .spef file is created in this loaction /home/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/routing
+
 </details>
