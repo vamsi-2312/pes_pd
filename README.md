@@ -1166,21 +1166,29 @@ It is getting violated.
 **Introdunction to delay tables**<br>
 for and gate, enable pin is 1
 for or gate, enable pin is 0
-<image4>
+![image4](https://github.com/vamsi-2312/pes_pd/assets/142248038/6e12e75a-013f-4019-a0e9-d9094181233f)
+
 spliting the load into 2 buffers and then 1 buffer
-<image5>
+![image5](https://github.com/vamsi-2312/pes_pd/assets/142248038/d0712464-8039-41d7-9b20-15c65181f217)
+
 assumption
-<image6>
+![image6](https://github.com/vamsi-2312/pes_pd/assets/142248038/3296a4d0-4654-4ca2-9ac7-937e275c7d03)
+
 observation
-<image7>
+![image7](https://github.com/vamsi-2312/pes_pd/assets/142248038/914eb61f-1854-4e8e-9b6c-8370ec72d87c)
+
 the capcitance load at output node of each buffer is varying.
 Delay tables - representation of delays
-<image8>
-<image9>
+![image8](https://github.com/vamsi-2312/pes_pd/assets/142248038/48992324-85f3-457e-b55c-9b710ca20c17)
+
+![image9](https://github.com/vamsi-2312/pes_pd/assets/142248038/e16b3931-19f5-4842-ba75-cd325750f727)
+
 if next input capcitance is in between a range then we need extrpolate.
-<image10>
+![image10](https://github.com/vamsi-2312/pes_pd/assets/142248038/ddbad1d0-ca77-40a1-953a-e7d1f3c69aca)
+
 the delay for flip flop would be x9' + y15
-<image11>
+![image11](https://github.com/vamsi-2312/pes_pd/assets/142248038/a0644b09-fdf4-413a-9f30-95f908e85eb5)
+
 skew = 0
 if there was different delays then skew would have some value
 Skew is the time delta between the actual and expected arrival time of a clock signal
