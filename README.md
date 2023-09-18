@@ -1194,9 +1194,12 @@ if there was different delays then skew would have some value
 Skew is the time delta between the actual and expected arrival time of a clock signal
 
 coming back to solve our issue in violation of run_synthesis
-<image13dell>
-<image14dell>
-<image15dell>
+![image13dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/3cacb300-9139-4fbd-bb98-df5fdda7f226)
+
+![image14dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/e26ebc3b-6b6c-4c55-a2d5-7a5a5b18d1d8)
+
+![image15dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/9fc87005-64f4-4e4f-8afe-1f47beb6e1d4)
+
 ```
 init_floorplan
 ```
@@ -1209,10 +1212,12 @@ cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-
 ```
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
-<image16dell>
+![image16dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/bcbff8d2-e935-446d-862c-7015f34c1510)
+
 ![image17dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/8d0a58fc-bfc1-4763-bdc4-1891c04cba50)
+
 **sky130_vsdinv _14086_**
-<image18dell>
+![image18dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/fea4dfc8-a664-4145-857a-0c8a59b44aa8)
 
 ### Timing analysis with ideal clocks using openSTA
 
