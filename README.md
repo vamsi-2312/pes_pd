@@ -1066,7 +1066,284 @@ the drc has been resolved after putting anthor layer<br>
 <details>
 <summary> Week 3 -> Day 4 </summary><br>
 
-![image17dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/8d0a58fc-bfc1-4763-bdc4-1891c04cba50)
+## Contents of Day 4
++ Timing modeling using delays.
++ Timing analysis with ideal clocks using openSTA
++ Clock tree synthesis TritonCTS and signal integrity.
++ Timing analysis with real clocks using openTA
 
+### Timing modeling using delay tables
+
+** Lab to convert grid info t track info**<br>
+Extract the layout into a LEF file. <br>
+
+```
+cd ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd
+```
+```
+less tracks.info
+```
+<image1dell>
+in our layout
+press g
+we can see a grid
+<image2dell>
+after making our grid
+by executing the below command in magic console
+  
+```
+grid 0.46um 0.34um 0.23um 0.17um
+```
+<image3dell>
+
+the width of the standard cell must be in odd multiples of x pitch.
+<image4dell>
+we can there are 2 full boxes and 2 half boxes being used for the ports.
+
+same way we need for height also.
+<image5dell>
+1 and half boxes being used.
+
+how to name any port.
+<image6dell>
+
+<image7dell>
+save the file as sky130_vsdinv.mag
+
+```
+save sky130_vsdinv.mag
+```
+
+to make lef file
+```
+lef write
+```
+<image8dell>
+<image9dell>
+now we have our lef file ready
+we need to put it into picorv32a
+
+next copying our lef file into this destination ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+
+<image10dell>
+<image11dell>
+<image12dell>
+
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
+```
+```
+docker
+```
+```
+./flow.tcl -interactive
+```
+```
+package require openlane 0.9
+```
+```
+prep -design picorv32a -tag 16-09_17-39 -overwrite
+```
+```
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+ 
+add_lefs -src $lefs
+```
+```
+run_synthesis
+```
+It is getting violated.
+
+**Introdunction to delay tables**<br>
+for and gate, enable pin is 1
+for or gate, enable pin is 0
+<image4>
+spliting the load into 2 buffers and then 1 buffer
+<image5>
+assumption
+<image6>
+observation
+<image7>
+the capcitance load at output node of each buffer is varying.
+Delay tables - representation of delays
+<image8>
+<image9>
+if next input capcitance is in between a range then we need extrpolate.
+<image10>
+the delay for flip flop would be x9' + y15
+<image11>
+skew = 0
+if there was different delays then skew would have some value
+Skew is the time delta between the actual and expected arrival time of a clock signal
+
+coming back to solve our issue in violation of run_synthesis
+<image13dell>
+<image14dell>
+<image15dell>
+```
+init_floorplan
+```
+```
+run_placement
+```
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/placement
+```
+```
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
+<image16dell>
+![image17dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/8d0a58fc-bfc1-4763-bdc4-1891c04cba50)
+**sky130_vsdinv _14086_**
+<image18dell>
+
+### Timing analysis with ideal clocks using openSTA
+
+<image19>
+<image20>
+<image21>
+Setup time: Minimum time data must be stable before the clock edge to guarantee correct flip-flop operation.
+
+Hold time: Minimum time data must remain stable after the clock edge to ensure reliable flip-flop operation.
+jitter - in yellow
+<image22>
+<image23>
+
+<image24>
+<image25>
+
+create two file one is pre_sra.conf and my_base.sdc
+save the first file in this loaction ~/Desktop/work/tools/openlane_working_dir/openlane
+the second file in this location ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+
+<image26dell>
+<image27dell>
+After setting env(SYNTH_MAX_FANOUT) = 4
+<image28dell>
+the violation is reduced
+By upsizing the slack is reduced.
+<image29dell>
+
+### Clock tree synthesis TritonCTS and signal integrity
+We should ideally get skew = 0
+<image30>
+Clock tree synthesis (CTS) is a crucial step in digital integrated circuit design. It optimizes clock distribution, minimizing skew and jitter, ensuring synchronous operation, and enhancing overall chip performance, critical for modern high-speed electronics.
+
+We are installing buffer, so that the signal is sent properly.
+<image31>
+
+Clock net shielding employs techniques like differential signaling, ground planes, and shielding layers to minimize electromagnetic interference and crosstalk in high-frequency clock signals. This enhances signal integrity and reduces the risk of timing errors in complex electronic systems.
+<image32>
+
+Crosstalk-induced delta delay or skew can disrupt signal timing in digital circuits, causing errors and reducing performance. It results from unwanted coupling between adjacent signals, introducing unpredictable delays that can lead to data corruption and functional failures, necessitating careful signal integrity analysis and mitigation techniques.
+<image33>
+
+to run CTS
+in openlane
+```
+run_cts
+```
+<image34dell>
+<image35dell>
+<image36dell>
+
+### Timing analysis with real clocks using openSTA
+
+Refer Hold time and Setup time definition above.
+
+Doing Timing analysis with real clocks
+<image37>
+<image38>
+setup time slack
+<image39>
+hold time slack
+<image40>
+<image41>
+
+start openlane
+```
+docker
+```
+```
+./flow.tcl -interactive
+```
+```
+package require openlane 0.9
+```
+```
+prep -design picorv32a -tag 16-09_17-39 -overwrite
+```
+```
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+ 
+add_lefs -src $lefs
+```
+```
+run_synthesis
+```
+```
+init_floorplan
+```
+```
+run_placement
+```
+```
+run_cts
+```
+<image43dell>
+<image44dell>
+
+```
+openroad
+```
+<image42dell>
+
+reading the .lef file
+```
+read_lef /openLANE_flow/designs/picorv32a/runs/16-09_17-39/tmp/merged.lef
+```
+<image45dell>
+reading the .def file
+
+```
+read_def /openLANE_flow/designs/picorv32a/runs/16-09_17-39/results/cts/picorv32a.cts.def
+```
+<image46dell>
+
+```
+write_db pico_cts.db
+```
+```
+read_db pico_cts.db
+```
+```
+read_verilog /openLANE_flow/designs/picorv32a/runs/16-09_17-39/results/synthesis/picorv32a.synthesis_cts.v
+```
+<image47dell>
+
+```
+read_liberty -max $::env(LIB_SLOWEST)
+```
+```
+read_liberty -max $::env(LIB_FASTEST)
+```
+<image48dell>
+
+```
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+```
+<image49dell>
+
+```
+set_propagated_clock [all_clocks]
+```
+```
+report_checks -path_delay min_max -format full_clock_expanded -digits 4
+```
+hold slack
+<image50adell>
+setup slack
+<image50dell>
+<image51del>
 
 </details>
