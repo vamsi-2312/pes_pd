@@ -1411,29 +1411,38 @@ setup slack<br>
 ## Introduction to Maze Routing and Design Rule Check
 **Maze Routing**
 The algorithim find the best possible route from the source to target.(Maze Routing - Lee's Algorithim)
-<image1>
+![image1](https://github.com/vamsi-2312/pes_pd/assets/142248038/6f6a261c-6222-45ce-b51a-e1395f98dd15)
+
 creates a grid
-<image2>
+![image2](https://github.com/vamsi-2312/pes_pd/assets/142248038/b00cc81c-d3fe-47f5-8f01-31429b4faa05)
+
 numbers the path
-<image3>
+![image3](https://github.com/vamsi-2312/pes_pd/assets/142248038/e2869027-dd56-41dc-95d2-fe25a698bfa7)
+
 fist path
-<image4>
+![image4](https://github.com/vamsi-2312/pes_pd/assets/142248038/cd37b986-d098-460b-b422-afe9ef1f76f4)
+
 second path
-<image5>
+![image5](https://github.com/vamsi-2312/pes_pd/assets/142248038/d127c028-9d05-464d-bb71-1934bd282bd7)
+
 since the second path is having less turns, we choose that
 another example
-<image6>
+![image6](https://github.com/vamsi-2312/pes_pd/assets/142248038/9e128c3a-3dcb-4df1-ae83-aee79916b4ad)
+
 similarly for other paths also.
-<image7>
+![image7](https://github.com/vamsi-2312/pes_pd/assets/142248038/72ccc83f-d23d-433d-98c5-452094a8e553)
+
 
 **DRC**
 * Must maintain minimum wire width
 * Must maintain minimum length between 2 wires
 * Must maintain minimum wire pitch
 There are many more rules.
-<image8>
+![image8](https://github.com/vamsi-2312/pes_pd/assets/142248038/b867a713-4e50-4f8d-83d1-1e36a1272725)
+
 solution, different layers
-<image9>
+![iamge9](https://github.com/vamsi-2312/pes_pd/assets/142248038/55124849-d91d-4a04-8dcb-d27f666dc431)
+
 * Via width
 *Via Spacing
 
@@ -1482,27 +1491,35 @@ run_routing
 Global routing in chip design is the initial stage that establishes a high-level plan for connecting components on an integrated circuit. It addresses wirelength, congestion, and power considerations. 
 
 Detailed routing follows, refining connections, ensuring manufacturability, and completing the chip's interconnections. Both stages are crucial for chip functionality and performance.
-<image13>
-<image14>
+![image13](https://github.com/vamsi-2312/pes_pd/assets/142248038/19158415-ae9e-46e3-8ed6-9cf5b801f668)
+
+![image14](https://github.com/vamsi-2312/pes_pd/assets/142248038/59009076-19f4-4d9f-9c28-1c76385b5efb)
+
 
 ## Triton Route Features
 
-<image15>
-<image16>
+![image15](https://github.com/vamsi-2312/pes_pd/assets/142248038/fb5a947b-4999-4ea2-b71e-cd256ca460d1)
+
+![image16](https://github.com/vamsi-2312/pes_pd/assets/142248038/dafc5157-c16d-4a6b-b5a3-35131ef247c9)
+
 Routig Requirements forr Preprocessed Guides:
 * Should have unit width.
 * Should be on the preferred direction.
-<image17>
-<image18>
+![image17](https://github.com/vamsi-2312/pes_pd/assets/142248038/431ff156-a969-42c0-bad4-348df7fa7096)
+
+![image18](https://github.com/vamsi-2312/pes_pd/assets/142248038/583ae120-1fdc-4899-a5c7-64233fcd886d)
+
 TritonRoute
 * Inputs : .lef, .def, processed route guides
 * Outputs : Detailed routing solution with optimised ire length and via count.
 * Constraints : Route guides, connectivity constraints and design rules.
-<image19>
+![image19](https://github.com/vamsi-2312/pes_pd/assets/142248038/efb5c3ba-9bf5-4e8c-948a-a8c838e63658)
+
 + Access Point : on-grid point on the metl layer of the route guide, and is used to connect to lower layer, upper layer segments, pins and ports.
 + Access Point Cluster : A union of all APs derived from everything.
 
-<image20>
+![image20](https://github.com/vamsi-2312/pes_pd/assets/142248038/3b9d680e-4967-4d55-8a2b-81c08e4f7fbc)
+
 Now we are going to extract the parasites.
 ```
 cd ~/Desktop/work/tools/SPEF_Extractor/
