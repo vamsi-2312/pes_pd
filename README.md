@@ -1409,46 +1409,47 @@ setup slack<br>
 
 
 ## Introduction to Maze Routing and Design Rule Check
-**Maze Routing**
-The algorithim find the best possible route from the source to target.(Maze Routing - Lee's Algorithim)
+
+**Maze Routing**<br>
+The algorithim find the best possible route from the source to target.(Maze Routing - Lee's Algorithim)<br>
 ![image1](https://github.com/vamsi-2312/pes_pd/assets/142248038/6f6a261c-6222-45ce-b51a-e1395f98dd15)
 
-creates a grid
+creates a grid<br>
 ![image2](https://github.com/vamsi-2312/pes_pd/assets/142248038/b00cc81c-d3fe-47f5-8f01-31429b4faa05)
 
-numbers the path
+numbers the path<br>
 ![image3](https://github.com/vamsi-2312/pes_pd/assets/142248038/e2869027-dd56-41dc-95d2-fe25a698bfa7)
 
-fist path
+fist path<br>
 ![image4](https://github.com/vamsi-2312/pes_pd/assets/142248038/cd37b986-d098-460b-b422-afe9ef1f76f4)
 
-second path
+second path<br>
 ![image5](https://github.com/vamsi-2312/pes_pd/assets/142248038/d127c028-9d05-464d-bb71-1934bd282bd7)
 
-since the second path is having less turns, we choose that
-another example
+since the second path is having less turns, we choose that<br>
+another example<br>
 ![image6](https://github.com/vamsi-2312/pes_pd/assets/142248038/9e128c3a-3dcb-4df1-ae83-aee79916b4ad)
 
-similarly for other paths also.
+similarly for other paths also.<br>
 ![image7](https://github.com/vamsi-2312/pes_pd/assets/142248038/72ccc83f-d23d-433d-98c5-452094a8e553)
 
 
-**DRC**
+**DRC**<br>
 * Must maintain minimum wire width
 * Must maintain minimum length between 2 wires
 * Must maintain minimum wire pitch
-There are many more rules.
+There are many more rules.<br>
 ![image8](https://github.com/vamsi-2312/pes_pd/assets/142248038/b867a713-4e50-4f8d-83d1-1e36a1272725)
 
-solution, different layers
+solution, different layers<br>
 ![iamge9](https://github.com/vamsi-2312/pes_pd/assets/142248038/55124849-d91d-4a04-8dcb-d27f666dc431)
 
-* Via width
-*Via Spacing
+* Via width<br>
+* Via Spacing<br>
 
 ## Power Distribution Network and routing
 
-Routing step of the layout.
+Routing step of the layout.<br>
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane
 ```
@@ -1477,20 +1478,20 @@ gen_pdn
 ![image12dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/9193c4ef-b31c-404b-bfec-1cf38ccea5f7)
 
 <image13>
-green color reg - picorv32
-red - vdd
-blue - gnd
+green color reg - picorv32<br>
+red - vdd<br>
+blue - gnd<br>
 
 ![image14dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/b7d9f257-cecd-44bb-9f22-30bfdd6d445d)
 
 
-last step remaining is routing
+last step remaining is routing<br>
 ```
 run_routing
 ```
-Global routing in chip design is the initial stage that establishes a high-level plan for connecting components on an integrated circuit. It addresses wirelength, congestion, and power considerations. 
+Global routing in chip design is the initial stage that establishes a high-level plan for connecting components on an integrated circuit. It addresses wirelength, congestion, and power considerations. <br>
 
-Detailed routing follows, refining connections, ensuring manufacturability, and completing the chip's interconnections. Both stages are crucial for chip functionality and performance.
+Detailed routing follows, refining connections, ensuring manufacturability, and completing the chip's interconnections. Both stages are crucial for chip functionality and performance.<br>
 ![image13](https://github.com/vamsi-2312/pes_pd/assets/142248038/19158415-ae9e-46e3-8ed6-9cf5b801f668)
 
 ![image14](https://github.com/vamsi-2312/pes_pd/assets/142248038/59009076-19f4-4d9f-9c28-1c76385b5efb)
@@ -1502,7 +1503,7 @@ Detailed routing follows, refining connections, ensuring manufacturability, and 
 
 ![image16](https://github.com/vamsi-2312/pes_pd/assets/142248038/dafc5157-c16d-4a6b-b5a3-35131ef247c9)
 
-Routig Requirements forr Preprocessed Guides:
+Routing Requirements forr Preprocessed Guides:
 * Should have unit width.
 * Should be on the preferred direction.
 ![image17](https://github.com/vamsi-2312/pes_pd/assets/142248038/431ff156-a969-42c0-bad4-348df7fa7096)
@@ -1520,15 +1521,15 @@ TritonRoute
 
 ![image20](https://github.com/vamsi-2312/pes_pd/assets/142248038/3b9d680e-4967-4d55-8a2b-81c08e4f7fbc)
 
-Now we are going to extract the parasites.
+Now we are going to extract the parasites.<br>
 ```
 cd ~/Desktop/work/tools/SPEF_Extractor/
 ```
-We are using SPEF Extrctor :  SPEF Extractor is a software tool used to automatically generate Standard Parasitic Exchange Format (SPEF) files. These files represent parasitic electrical characteristics in integrated circuits, aiding accurate simulation and timing analysis during the design process.
+We are using SPEF Extrctor :  SPEF Extractor is a software tool used to automatically generate Standard Parasitic Exchange Format (SPEF) files. These files represent parasitic electrical characteristics in integrated circuits, aiding accurate simulation and timing analysis during the design process.<br>
 
 ```
 python3 /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/routing/picorv32a.def
 ```
-The .spef file is created in this loaction /home/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/routing
+The .spef file is created in this loaction /home/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_17-39/results/routing<br>
 
 </details>
