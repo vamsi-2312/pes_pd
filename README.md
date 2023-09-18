@@ -644,6 +644,11 @@ Transistion time = time(slew_high_fall_thr) - time(slew_low_fall_thr)<br>
 <details>
 <summary> Week 3 -> Day 3 </summary><br>
 
+## Contents of Day 3
++ Labs for CMOS inverter ngspice simulations.
++ Inception of Layout CMOS fabrication process.
++ sky130 Tech file Labs
+
 ## Labs for CMOS inverter ngspice simulations
 
 ### IO Placer
@@ -664,11 +669,12 @@ cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-
 ```
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
-<image1dell>
+![image1dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/d0a449eb-2903-4e46-a213-50a7f2d1893d)
+
 we can observe that the input and output ports are placed uniformaly.<br>
 
 In the floorplan.tcl file<br>
-<image2dell>
+![image2dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/89c188f3-92ba-4d17-90bc-b06b171a78e9)
 
 ```
 set ::env(FP_IO_MODE) 2
@@ -676,11 +682,13 @@ set ::env(FP_IO_MODE) 2
 ```
 run_floorplan
 ```
-<image3dell>
+![image3dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/afeab1fa-a815-4493-8dbe-ebfb89938fb2)
+
 ```
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
-<image4dell>
+![image4dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/13ed05ad-dc45-4efb-9be7-999007995975)
+
 now we can see that the ports arent placed equidistantly.<br>
 
 ### Spice deck creation for CMOS inverter
