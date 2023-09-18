@@ -916,19 +916,25 @@ finally
 
 **Lab introduction to sky130 basic layers layout ns LEF usinf inverter**
 
-<image63dell>
+![image63dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/a7f1e7c6-b73d-4547-931a-6af7ac9bfd43)
+
 red - polysilicon 
 green - n diffusion
 peach - p diffusion
 blue - metal
-<image64dell>
-<image65dell>
+![image64dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/9ebca447-3276-4624-abec-460f7c5155b7)
+
+![image65dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/a1b188bf-4985-4e6a-9558-43590bde45b0)
+
 drains connected to output y
-<image66dell>
+![image66dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/d0bb1177-db18-4b76-b2ca-1f2f10d8c055)
+
 vdd connection
-<image67dell>
+![image67dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/cd674e25-ca1c-44c8-a80d-ee04f35b4170)
+
 gnd connection
-<image68dell>
+![image68dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/34e7ff59-dc48-448b-b6b6-85f94abbc00c)
+
 LEF is on the right it contains the meatal connection(pr boundaries and ports)
 ![image69](https://github.com/vamsi-2312/pes_pd/assets/142248038/c924e728-4563-4e81-9568-f8ff91f5e075)
 
@@ -941,23 +947,31 @@ In magic terminal
 ```
 extact all
 ```
-<image70dell>
-<image71dell>
+![image70dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/f1e654d7-79d6-41c2-bb67-e81ecf1cf18c)
 
-<image72dell>
+![image71dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/cc263c40-8b7a-467e-9e31-4c3c363f493a)
+
+![image72dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/eafe13c6-49ec-42a2-9b03-c9a28d4da3ca)
 
 ## Sky130 Tech file Labs
-<image73dell>
-<image74dell>
-<image75dell>
+![image73dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/71fcfb5d-812c-4ef2-8f1f-cff3c502b733)
 
-<image76dell>
+![image74dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/76baddcc-e04a-4696-81e9-5a4c17cea8fe)
+
+![image75dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/ce0f59a2-7055-41ca-ad95-d0d0806083f6)
+
+
+![image76dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/77e32990-2aca-46f3-bba4-319c74b8e722)
+
 rise time = 80% of rise - 20% of rise = (2.8906 - 2.6491)*1E-9
-<image77dell>
+![image77dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/b1b1c976-6f54-4fa7-94af-52087b6e54f2)
+
 fall time = 20% of fall - 80% of fall = (0.02664)*1E-9
-<image78dell>
+![image78dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/d395e964-4b42-48a5-bb87-fabfeb42d309)
+
 Cell rise delay = 50% of output - 50% of input = (0.005324)*1E-9
-<image79dell>
+![image79ell](https://github.com/vamsi-2312/pes_pd/assets/142248038/97bf1eee-0f95-46a0-b231-ad9f76d159af)
+
 Cell fall delay = 50% of output - 50% of input = (0.07542)*1E-9
 
 Later, we are going to use layout and create LEF file.
@@ -965,10 +979,13 @@ Later, we are going to use layout and create LEF file.
 **Magic DRC**
 we can refer to this webpage opencircuitdesign.com/magic/
 CIF Ouput Section
-<image80dell>
-<image80idell>
+![image80dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/f685e304-74cb-41a8-907e-ffde8886cc6b)
+
+![image80idell](https://github.com/vamsi-2312/pes_pd/assets/142248038/3b77c0a2-3d09-4206-96fb-a401a86f5ab9)
+
 DRC Section
-<image81dell>
+![image81dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/cba3aed0-b76e-4610-878a-7c026be4d779)
+
 
 Basic DRC rules are Edge based rules.
 There are rules that are not edge based such as area,etc.
@@ -994,8 +1011,10 @@ to find out what the drc error is, in console type
 ```
 drc why
 ```
-<image82dell>
-<image83dell>
+![image82dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/47179920-4417-46fb-8860-eee8e8f6719c)
+
+![image83dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/6c4fb692-06e5-4ff5-88f7-9a0f0e806439)
+
 
 select an area, to see the contacts
 ```
@@ -1009,21 +1028,33 @@ to perform drc
 ```
 drc check
 ``` 
-<image85dell>
-<image86dell>
-<image87dell>
+![image85dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/fdaac6be-005c-4725-9ee9-3af4f85106c2)
+
+![image86dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/15de9d91-13df-4bfb-8fce-b1eb2fa94a50)
+
+![image87dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/c891b0f0-e67d-4ce5-9eae-e8aed65d0a27)
+
 updating the new .tech file
-<image88dell>
-<image89dell>
-<image90dell>
+![image88dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/10d9c461-3318-43ae-b249-357608753fcb)
+
+![image89dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/faa0c356-6396-4170-9dce-9dbd89e79222)
+
+![image90dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/5528f20b-50c5-4bb4-8f83-14756edf0960)
+
 we can see that the resistor drc error are fixed.
 
-<image91dell>
-<image92dell>
-<image93dell>
-<image94dell>
-<image95dell>
-<image96dell>
-<image97dell>
+![image91dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/b234d39e-3277-4fd0-a049-4fb14a68b029)
+
+![image92dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/47c83b4f-73c6-4ff6-8218-1ef78160916a)
+
+![image93dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/0651de48-ed44-49fb-8d41-7ebe1dfd70e1)
+
+![image94dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/0d807a0d-285d-4440-b14d-6a1edc930cda)
+
+![image95dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/bcb28412-16d3-42e5-875d-aeee9caacda4)
+
+![image96dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/147fba26-8d98-406a-8eb7-0d4d0f294598)
+
+
 
 </details>
