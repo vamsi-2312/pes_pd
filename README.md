@@ -1214,6 +1214,8 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ```
 ![image16dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/bcbff8d2-e935-446d-862c-7015f34c1510)
 
+![image8a](https://github.com/vamsi-2312/pes_pd/assets/142248038/44685bc6-bfb2-483f-a160-c8861c3f1b5a)
+
 **sky130_vsdinv _17542_** <br>
 ![image8c](https://github.com/vamsi-2312/pes_pd/assets/142248038/d0fcd2be-38a4-45b2-b45c-b53a9ff71f92)
 
