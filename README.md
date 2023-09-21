@@ -1216,7 +1216,7 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 ![image17dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/8d0a58fc-bfc1-4763-bdc4-1891c04cba50)
 
-**sky130_vsdinv _14086_** <br>
+**sky130_vsdinv _14247_** <br>
 ![image18dell](https://github.com/vamsi-2312/pes_pd/assets/142248038/fea4dfc8-a664-4145-857a-0c8a59b44aa8)
 
 ## Timing analysis with ideal clocks using openSTA
